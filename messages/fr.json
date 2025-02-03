@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "settingsAccountPage": {
+      "title": "Paramètres du compte | {siteTitle}",
+      "description": "Gérez les informations de votre compte et la sécurité de votre profil"
+    },
+    "settingsAppearancePage": {
+      "title": "Personnalisation de l'interface | {siteTitle}",
+      "description": "Ajustez l'apparence et le thème de votre application"
+    },
+    "settingsProfilePage": {
+      "title": "Gestion du profil | {siteTitle}",
+      "description": "Modifiez les informations de votre profil et configurez votre visibilité"
+    },
+    "settingsSecurityPage": {
+      "title": "Paramètres de sécurité | {siteTitle}",
+      "description": "Modifiez votre mot de passe et configurez des options de sécurité avancées"
+    },
+    "homePage": {
+      "title": "Accueil | {siteTitle}",
+      "description": "Découvrez les fonctionnalités de la plateforme et commencez votre parcours"
+    },
+    "loginPage": {
+      "title": "Connexion | {siteTitle}",
+      "description": "Connectez|vous à votre compte pour accéder à vos fonctionnalités et paramètres"
+    },
+    "signupPage": {
+      "title": "Inscription | {siteTitle}",
+      "description": "Créez un compte pour commencer à utiliser la plateforme"
+    },
+    "forgotPasswordPage": {
+      "title": "Mot de passe oublié | {siteTitle}",
+      "description": "Réinitialisez votre mot de passe pour récupérer l'accès à votre compte"
+    },
+    "newPasswordPage": {
+      "title": "Réinitialisation du mot de passe | {siteTitle}",
+      "description": "Choisissez un nouveau mot de passe pour sécuriser votre compte"
+    },
+    "newVerificationPage": {
+      "title": "Vérification de l'adresse e|mail | {siteTitle}",
+      "description": "Vérifiez votre adresse e|mail pour activer votre compte"
+    },
+    "errorPage": {
+      "title": "Erreur | {siteTitle}",
+      "description": "Une erreur s'est produite. Veuillez réessayer plus tard"
+    },
+    "getStartedPage": {
+      "title": "Bienvenue | {siteTitle}",
+      "description": "Complétez votre profil pour commencer à utiliser la plateforme"
+    }
+  },
+  "accountForm": {
+    "fields": {
+      "role": {
+        "enum": {
+          "admin": "Administrateur",
+          "user": "Utilisateur"
+        },
+        "label": "Rôle",
+        "placeholder": "Sélectionner un rôle"
+      },
+      "username": {
+        "description": "Nom affiché sur votre profil et dans les communications par courrier électronique",
+        "label": "Nom d'utilisateur",
+        "placeholder": "Votre nom d'utilisateur"
+      }
+    },
+    "submitButton": "Mettre à jour le compte"
+  },
+  "appSidebar": {
+    "items": {
+      "accueil": "Accueil"
+    }
+  },
+  "appearanceForm": {
+    "header": {
+      "description": "Personnalisez l'aspect et la convivialité de votre interface comme vous l'entendez",
+      "title": "Thème"
+    },
+    "options": {
+      "dark": "Sombre",
+      "light": "Lumière",
+      "system": "Système"
+    }
+  },
+  "authenticationForm": {
+    "fields": {
+      "isTwoFactorEnabled": {
+        "description": "Activez l'authentification à deux facteurs pour sécuriser votre compte",
+        "label": "Authentification à deux facteurs"
+      }
+    },
+    "submitButton": "Mettre à jour l'authentification"
+  },
+  "common": {
+    "messages": {
+      "generic": "Quelque chose s'est mal passé",
+      "notAuthorized": "Non autorisé"
+    }
+  },
+  "deleteAccountForm": {
+    "buttons": {
+      "cancel": "Annuler",
+      "submit": "Supprimer"
+    },
+    "fields": {
+      "confirmation": {
+        "label": {
+          "span1": "Pour confirmer, tapez",
+          "span2": "supprimer mon compte",
+          "span3": "ci-dessous"
+        }
+      },
+      "email": {
+        "label": {
+          "span1": "Entrez votre e-mail",
+          "span2": "pour continuer"
+        }
+      },
+      "password": {
+        "label": "Confirmez le mot de passe"
+      }
+    },
+    "header": {
+      "description": "Nous supprimerons votre compte immédiatement",
+      "title": "Voulez-vous vraiment supprimer votre compte?"
+    },
+    "warning": "Cette action n'est pas réversible. Veuillez vous en assurer"
+  },
+  "forgotPasswordForm": {
+    "backButtonLabel": "Retour à la connexion",
+    "fields": {
+      "email": {
+        "label": "E-mail"
+      }
+    },
+    "header": {
+      "label": "Entrez votre adresse e-mail. Un lien pour réinitialiser votre mot de passe vous sera envoyé",
+      "title": "Mot de passe oublié"
+    },
+    "submitButton": "Envoyer un e-mail de réinitialisation"
+  },
+  "getStartedForm": {
+    "backButtonLabel": "Retour à la connexion",
+    "fields": {
+      "name": {
+        "label": "Nom"
+      },
+      "password": {
+        "label": "Mot de passe"
+      },
+      "username": {
+        "label": "Nom d'utilisateur"
+      }
+    },
+    "header": {
+      "label": "Complétez votre profil pour continuer",
+      "title": "Bienvenue sur la plateforme"
+    },
+    "submitButton": "Continuer"
+  },
+  "languageSwitcher": {
+    "languages": {
+      "en": "Anglais",
+      "fr": "Français"
+    }
+  },
+  "loginForm": {
+    "backButtonLabel": "Vous n'avez pas de compte? Inscrivez-vous",
+    "buttons": {
+      "confirmTwoFactorCode": "Confirmer",
+      "forgotPassword": "Mot de passe oublié",
+      "submit": "Se connecter"
+    },
+    "errors": {
+      "OAuthAccountNotLinked": "E-mail déjà utilisé avec différents fournisseurs"
+    },
+    "fields": {
+      "email": {
+        "label": "E-mail"
+      },
+      "password": {
+        "label": "Mot de passe"
+      }
+    },
+    "header": {
+      "label": {
+        "logIn": "Bienvenue à nouveau ! Connectez-vous à votre compte",
+        "twoFactor": "Si vous avez un compte, nous avons envoyé un code à {email}. Entrez-le ci-dessous"
+      },
+      "titles": {
+        "logIn": "Connexion",
+        "twoFactor": "Vérifiez qu'il s'agit bien de vous"
+      }
+    },
+    "resendTwoFactorCode": "Vous n'avez pas reçu le code ? Renvoyer"
+  },
+  "navUser": {
+    "items": {
+      "logIn": "Se connecter",
+      "logOut": "Se déconnecter",
+      "settings": "Paramètres"
+    }
+  },
+  "newPasswordForm": {
+    "backButtonLabel": "Retour à la connexion",
+    "fields": {
+      "password": {
+        "label": "Mot de passe"
+      }
+    },
+    "header": {
+      "label": "Choisissez un nouveau mot de passe pour sécuriser votre compte",
+      "title": "Réinitialisation du mot de passe"
+    },
+    "submitButton": "Réinitialiser le mot de passe"
+  },
+  "newVerificationForm": {
+    "backButtonLabel": "Retour à la connexion",
+    "header": {
+      "title": "Vérification de l'adresse e-mail"
+    }
+  },
+  "passwordForm": {
+    "fields": {
+      "newPassword": {
+        "label": "Nouveau mot de passe"
+      },
+      "password": {
+        "label": "Mot de passe actuel"
+      }
+    },
+    "submitButton": "Mettre à jour le mot de passe"
+  },
+  "profileForm": {
+    "fields": {
+      "avatar": {
+        "actions": {
+          "removeAvatar": "Supprimer l'image",
+          "uploadAvatar": "Télécharger une image"
+        },
+        "description": "Ceci est votre photo de profil. Vous pouvez le modifier ou le supprimer",
+        "label": "Photo de profil"
+      },
+      "bio": {
+        "description": "Écrivez une courte biographie pour vous décrire",
+        "label": "Biographie",
+        "placeholder": "Parlez-nous un peu de vous"
+      },
+      "email": {
+        "label": "Adresse email",
+        "placeholder": "Votre email"
+      },
+      "location": {
+        "description": "Indiquez votre localisation pour accéder à des services sur mesure",
+        "label": "Emplacement",
+        "placeholder": "Votre emplacement"
+      },
+      "name": {
+        "description": "Ce nom sera visible publiquement. Vous pouvez utiliser un pseudonyme ou votre vrai nom",
+        "label": "Nom",
+        "placeholder": "Votre nom"
+      }
+    },
+    "submitButton": "Mettre à jour le profil"
+  },
+  "searchInput": {
+    "actions": {
+      "clear": "Effacer",
+      "search": "Rechercher"
+    },
+    "placeholder": "Recherche"
+  },
+  "settingsAccountPage": {
+    "deleteAccountButton": "Supprimer le compte",
+    "header": {
+      "labels": {
+        "account": "Mettez à jour les paramètres de votre compte",
+        "deleteAccount": "Supprimez définitivement votre compte ainsi que toutes vos données. Cette action est irréversible"
+      },
+      "titles": {
+        "account": "Compte",
+        "deleteAccount": "Suppression du compte"
+      }
+    }
+  },
+  "settingsAppearancePage": {
+    "header": {
+      "label": "Personnalisez l'apparence de l'application",
+      "title": "Apparence"
+    }
+  },
+  "settingsLayout": {
+    "account": "Compte",
+    "appearance": "Apparence",
+    "header": {
+      "description": "Gérez vos paramètres et maintenez votre compte à jour",
+      "title": "Paramètres"
+    },
+    "profile": "Profil",
+    "security": "Sécurité"
+  },
+  "settingsProfilePage": {
+    "header": {
+      "label": "Ceci est la manière dont vous apparaîtrez auprès des autres utilisateurs",
+      "title": "Profil"
+    }
+  },
+  "settingsSecurityPage": {
+    "header": {
+      "label": "Modifiez votre mot de passe et gérez vos paramètres de sécurité",
+      "title": "Sécurité et authentification"
+    }
+  },
+  "signupForm": {
+    "backButtonLabel": "Vous avez déjà un compte ? Connectez-vous",
+    "fields": {
+      "email": {
+        "label": "E-mail"
+      },
+      "name": {
+        "label": "Nom"
+      },
+      "password": {
+        "label": "Mot de passe"
+      },
+      "username": {
+        "label": "Nom d'utilisateur"
+      }
+    },
+    "header": {
+      "label": "Créez un compte pour commencer",
+      "title": "Inscription"
+    },
+    "submitButton": "S'inscrire"
+  },
+  "themeSwitcher": {
+    "options": {
+      "dark": "Sombre",
+      "light": "Lumière",
+      "system": "Système"
+    }
+  },
+  "zod": {
+    "common": {
+      "messages": {
+        "accountDeleted": "Compte supprimé",
+        "accountUpdated": "Compte mis à jour",
+        "authenticationUpdated": "Authentification mise à jour",
+        "avatarDeleted": "Photo de profil supprimée",
+        "avatarUpdated": "Photo de profil mise à jour",
+        "codeExpired": "Le code a expiré",
+        "confirmationEmailSent": "E-mail de confirmation envoyé",
+        "resetEmailSent": "E-mail de réinitialisation envoyé",
+        "emailFound": "L'adresse e-mail est déjà utilisée",
+        "emailNotFound": "L'adresse e-mail n'existe pas",
+        "emailTwoFactorNotEnabled": "L'authentification à deux facteurs n'est pas activée",
+        "emailVerified": "E-mail vérifié",
+        "incorrectEmail": "E-mail incorrect",
+        "incorrectPassword": "Mot de passe incorrect",
+        "invalidCode": "Code invalide",
+        "invalidCredentials": "Identifiants invalides",
+        "invalidEmail": "E-mail invalide",
+        "invalidFields": "Champs invalides",
+        "invalidToken": "Jeton invalide",
+        "missingToken": "Jeton manquant",
+        "passwordUpdated": "Mot de passe mis à jour",
+        "profileCompleted": "Profil complété",
+        "tokenExpired": "Le jeton a expiré",
+        "twoFactorCodeSent": "Code envoyé",
+        "usernameFound": "Nom d'utilisateur déjà utilisé",
+        "profileUpdated": "Profil mis à jour"
+      }
+    },
+    "messages": {
+      "bioMax": "Bio ne peut pas dépasser 200 caractères",
+      "confirmationRequired": "Une confirmation est requise",
+      "currentPasswordRequired": "Le mot de passe actuel est requis",
+      "deleteConfirmation": {
+        "span1": "Vous devez taper",
+        "span2": "supprimer mon compte",
+        "span3": "pour confirmer"
+      },
+      "email": "S'il vous plaît, mettez une adresse email valide",
+      "locationMax": "L'emplacement ne peut pas dépasser 100 caractères",
+      "nameMax": "Le nom doit comporter au maximum 50 caractères",
+      "nameMin": "Le nom doit être d'au moins 2 caractères",
+      "nameMin2": "Le nom doit comporter au moins 2 caractères",
+      "newPasswordMin": "Le nouveau mot de passe doit comporter au moins 6 caractères",
+      "newPasswordRequired": "Un nouveau mot de passe est requis",
+      "password": "Un mot de passe est requis",
+      "passwordMin": "Le mot de passe doit comporter au moins 6 caractères",
+      "passwordRequired": "Le mot de passe est requis",
+      "usernameMax": "Le nom d'utilisateur doit comporter au plus 30 caractères",
+      "usernameMin": "Le nom d'utilisateur doit comporter au moins 3 caractères",
+      "usernameRegex": "Le nom d'utilisateur ne doit contenir que des lettres, des nombres, des traits de disposition et des soulignements",
+      "usernameRegexSpecialChars": "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres, des soulignements (_) ou des tirets (-), et ne peut pas démarrer ou se terminer par des caractères spéciaux"
+    }
+  },
+  "homePage": {
+    "header": {
+      "titles": {
+        "welcomeBack": "Bienvenue {name}!",
+        "welcome": "Bienvenue sur {siteTitle} !"
+      },
+      "subTitle": {
+        "welcome": "Explorez nos fonctionnalités, connectez-vous à la communauté et commencez votre voyage",
+        "welcomeBack": "Nous sommes heureux de vous revoir"
+      }
+    },
+    "card": {
+      "header": {
+        "title": "À propos de {siteTitle}"
+      },
+      "content": {
+        "p1": "Il s'agit d'une plateforme de démarrage pour les projets full stack avec Next.js. Elle fournit une structure efficace pour développer des applications Web à l'aide de technologies modernes. Les technologies clés qui alimentent la plateforme sont :",
+        "p2": "Que vous créiez votre première application ou que vous gériez des projets complexes, cette plateforme vous offre les outils pour démarrer rapidement avec une configuration minimale",
+        "ul": {
+          "li": {
+            "nextjs": {
+              "title": "Next.js",
+              "description": ": pour le rendu côté serveur et le développement complet et transparent"
+            },
+            "tailwindCSS": {
+              "title": "Tailwind CSS",
+              "description": ": pour un style efficace, personnalisable et réactif"
+            },
+            "prisma": {
+              "title": "Prisma",
+              "description": ": pour la gestion de base de données et le support ORM, garantissant une interaction fluide des données"
+            },
+            "postgresql": {
+              "title": "PostgreSQL",
+              "description": ": une base de données relationnelle puissante pour un stockage de données sécurisé et évolutif"
+            },
+            "shadcn": {
+              "title": "ShadCN",
+              "description": ": une bibliothèque de composants qui simplifie la création de belles interfaces utilisateur avec cohérence"
+            },
+            "lucideReact": {
+              "title": "Lucide React",
+              "description": ": une collection d'icônes open source et personnalisables pour les applications React"
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© {dateYears} {siteTitle}. Tous droits réservés",
+      "creator": "Créé par {creatorName}",
+      "github": "Retrouvez mon travail sur"
+    }
+  },
+  "errorCard": {
+    "header": {
+      "title": "Oops"
+    },
+    "backButtonLabel": "Retour à la connexion",
+    "genericError": "Quelque chose s'est mal passé. Veuillez réessayer plus tard"
+  }
+}
