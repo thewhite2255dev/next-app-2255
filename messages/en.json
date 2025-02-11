@@ -74,24 +74,24 @@
       "description": "We will delete your account immediately",
       "title": "Do you really want to delete your account?"
     },
-    "warning": "This action is not reversible. \nPlease ensure it"
+    "warning": "This action is not reversible. Please ensure it"
   },
   "errorCard": {
-    "backButtonLabel": "Back to connection",
-    "genericError": "Something went wrong. \nPlease try again later",
+    "backButtonLabel": "Back to login",
+    "genericError": "Something went wrong. Please try again later",
     "header": {
       "title": "Oops"
     }
   },
   "forgotPasswordForm": {
-    "backButtonLabel": "Back to connection",
+    "backButtonLabel": "Back to login",
     "fields": {
       "email": {
         "label": "E-mail"
       }
     },
     "header": {
-      "label": "Enter your email address. \nA link to reset your password will be sent to you",
+      "label": "Enter your email address. A link to reset your password will be sent to you",
       "title": "Forgot password"
     },
     "submitButton": "Send a reset email"
@@ -99,7 +99,7 @@
   "homePage": {
     "card": {
       "content": {
-        "p1": "This is a platform for Full Stack projects using Next.js. \nIt provides an effective structure for the development of web applications with modern technologies. \nKey technologies are:",
+        "p1": "This is a platform for Full Stack projects using Next.js. It provides an effective structure for the development of web applications with modern technologies. Key technologies are:",
         "p2": "Whether you create your first application or manage complex projects, this platform offers the tools necessary to start quickly with a minimum configuration",
         "ul": {
           "li": {
@@ -131,12 +131,12 @@
         }
       },
       "header": {
-        "title": "About {siteitle}"
+        "title": "About {siteTitle}"
       }
     },
     "footer": {
-      "copyright": "© {Dateyears} {SiteTitle}. \nAll rights reserved",
-      "creator": "Created by {Creatorname}",
+      "copyright": "© {dateYears} {siteTitle}. All rights reserved",
+      "creator": "Created by {creatorName}",
       "github": "Discover my work on Github"
     },
     "header": {
@@ -145,9 +145,16 @@
         "welcomeBack": "We are happy to see you again"
       },
       "titles": {
-        "welcome": "Welcome to {siteitle}!",
+        "welcome": "Welcome to {siteTitle}!",
         "welcomeBack": "Welcome again {name}!"
       }
+    }
+  },
+  "authLayout": {
+    "footer": {
+      "copyright": "© {dateYears} {siteTitle}. All rights reserved",
+      "creator": "Created by {creatorName}",
+      "github": "Discover my work on Github"
     }
   },
   "languageSwitcher": {
@@ -157,11 +164,11 @@
     }
   },
   "loginForm": {
-    "backButtonLabel": "You don't have an account? \nRegister",
+    "backButtonLabel": "Don't have an account? Sign up",
     "buttons": {
       "confirmTwoFactorCode": "Confirm",
       "forgotPassword": "Forgot password",
-      "submit": "Connect"
+      "submit": "Login"
     },
     "errors": {
       "OAuthAccountNotLinked": "E-mail already used with different suppliers"
@@ -176,75 +183,75 @@
     },
     "header": {
       "label": {
-        "logIn": "Welcome again! \nConnect to your account",
-        "twoFactor": "If you have an account, we have sent a code to {email}. \nEnter it below"
+        "logIn": "Welcome again! Login to your account",
+        "twoFactor": "If you have an account, we have sent a code to {email}. Enter it below"
       },
       "titles": {
-        "logIn": "Connection",
+        "logIn": "Login",
         "twoFactor": "Make sure it is you"
       }
     },
-    "resendTwoFactorCode": "Haven't received the code? \nDismiss"
+    "resendTwoFactorCode": "Haven't received the code? Dismiss"
   },
   "metadata": {
     "errorPage": {
-      "description": "An error occurred. \nPlease try again later",
-      "title": "Error | \n{SiteTitle}"
+      "description": "An error occurred. Please try again later",
+      "title": "Error | {siteTitle}"
     },
     "forgotPasswordPage": {
       "description": "Reset your password to recover access to your account",
-      "title": "Forgot password | \n{SiteTitle}"
+      "title": "Forgot password | {siteTitle}"
     },
     "homePage": {
       "description": "Discover the platform features and start your journey",
-      "title": "Home | \n{SiteTitle}"
+      "title": "Home | {siteTitle}"
     },
     "loginPage": {
-      "description": "Connect to your account to access your features and settings",
-      "title": "Connection | \n{SiteTitle}"
+      "description": "Login to your account to access your features and settings",
+      "title": "Login | {siteTitle}"
     },
     "newPasswordPage": {
       "description": "Choose a new password to secure your account",
-      "title": "Password reset | \n{SiteTitle}"
+      "title": "Password reset | {siteTitle}"
     },
     "newVerificationPage": {
       "description": "Check your email address to activate your account",
-      "title": "E-mail address verification | \n{SiteTitle}"
+      "title": "E-mail address verification | {siteTitle}"
     },
     "onboardingPage": {
       "description": "Complete your profile to start using the platform",
-      "title": "Welcome | \n{SiteTitle}"
+      "title": "Welcome | {siteTitle}"
     },
     "settingsAccountPage": {
       "description": "Manage your account information and your profile safety",
-      "title": "Account settings | \n{SiteTitle}"
+      "title": "Account settings | {siteTitle}"
     },
     "settingsAppearancePage": {
       "description": "Adjust the appearance and theme of your application",
-      "title": "Interface customization | \n{SiteTitle}"
+      "title": "Interface customization | {siteTitle}"
     },
     "settingsProfilePage": {
       "description": "Change your profile information and configure your visibility",
-      "title": "Profile management | \n{SiteTitle}"
+      "title": "Profile management | {siteTitle}"
     },
     "settingsSecurityPage": {
       "description": "Change your password and configure advanced safety options",
-      "title": "Security settings | \n{SiteTitle}"
+      "title": "Security settings | {siteTitle}"
     },
     "signupPage": {
-      "description": "Create an account to start using the platform",
-      "title": "Registration | \n{SiteTitle}"
+      "title": "Sign up | {siteTitle}",
+      "description": "Create your account and take advantage of all our features."
     }
   },
   "navUser": {
     "items": {
-      "logIn": "Connect",
-      "logOut": "Disconnect",
-      "settings": "Parameters"
+      "logIn": "Login",
+      "logOut": "Log out",
+      "settings": "Settings"
     }
   },
   "newPasswordForm": {
-    "backButtonLabel": "Back to connection",
+    "backButtonLabel": "Back to login",
     "fields": {
       "password": {
         "label": "Password"
@@ -257,13 +264,13 @@
     "submitButton": "Reset password"
   },
   "newVerificationForm": {
-    "backButtonLabel": "Back to connection",
+    "backButtonLabel": "Back to login",
     "header": {
       "title": "E-mail address verification"
     }
   },
   "onboardingForm": {
-    "backButtonLabel": "Back to connection",
+    "backButtonLabel": "Back to login",
     "fields": {
       "name": {
         "label": "Name"
@@ -313,7 +320,7 @@
         "label": "Location"
       },
       "name": {
-        "description": "This name will be visible publicly. \nYou can use a pseudonym or your real name",
+        "description": "This name will be visible publicly. You can use a pseudonym or your real name",
         "label": "Name"
       }
     },
@@ -331,7 +338,7 @@
     "header": {
       "labels": {
         "account": "Update your account settings",
-        "deleteAccount": "Delete your account permanently as well as all your data. \nThis action is irreversible"
+        "deleteAccount": "Delete your account permanently as well as all your data. This action is irreversible"
       },
       "titles": {
         "account": "Account",
@@ -350,7 +357,7 @@
     "appearance": "Appearance",
     "header": {
       "description": "Manage your settings and keep your account up to date",
-      "title": "Parameters"
+      "title": "Settings"
     },
     "profile": "Profile",
     "security": "Security"
@@ -368,10 +375,10 @@
     }
   },
   "signupForm": {
-    "backButtonLabel": "Do you already have an account? \nConnection",
+    "backButtonLabel": "Already have an account? Login",
     "fields": {
       "email": {
-        "label": "E-mail address"
+        "label": "Email"
       },
       "name": {
         "label": "Name"
@@ -380,17 +387,17 @@
         "label": "Password"
       },
       "termsOfUse": {
-        "description": "By registering, you accept our conditions of use and our privacy policy"
+        "description": "By sign uping, you accept our conditions of use and our privacy policy"
       },
       "username": {
         "label": "User name"
       }
     },
     "header": {
-      "label": "Create an account to start using our service",
-      "title": "Registration"
+      "title": "Sign up",
+      "label": "Create your account now."
     },
-    "submitButton": "Register"
+    "submitButton": "Sign up"
   },
   "themeSwitcher": {
     "options": {
@@ -462,5 +469,8 @@
       "usernameRegex": "The username should only contain letters, numbers, dashes or underlines",
       "usernameRegexSpecialChars": "The username can only contain letters, numbers, underlines (_) or dashes (-), and cannot start or end with special characters"
     }
+  },
+  "cardWrapper": {
+    "or": "Or"
   }
 }

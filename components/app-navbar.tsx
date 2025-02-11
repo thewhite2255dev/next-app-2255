@@ -10,24 +10,25 @@ export default function AppNavbar() {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <header className="flex items-center justify-between border-b p-2">
-      <div className="flex items-center space-x-2">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-8 w-8"
-          onClick={toggleSidebar}
-        >
-          <PanelLeft />
-        </Button>
-      </div>
-
-      <div className="flex items-center space-x-2">
-        <div className="flex items-center space-x-1">
-          <LanguageSwitcher />
-          <ThemeSwitcher />
+    <header className="sticky top-0 w-full">
+      <nav className="flex items-center justify-between border-b p-2">
+        <div className="flex items-center space-x-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={toggleSidebar}
+          >
+            <PanelLeft />
+          </Button>
         </div>
-      </div>
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }

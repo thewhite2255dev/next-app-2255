@@ -9,9 +9,23 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import { Check, Languages } from "lucide-react";
+import { Check, ChevronDown, Languages } from "lucide-react";
 
-export default function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  size?: "icon" | "sm" | "default" | "lg"; // Ajout des tailles possibles
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"; // Ajout des variantes possibles
+}
+
+export default function LanguageSwitcher({
+  size = "icon",
+  variant = "ghost",
+}: LanguageSwitcherProps) {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -27,17 +41,25 @@ export default function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="h-8 w-8">
+        <Button variant={variant} size={size}>
           <Languages />
+          {size !== "icon" && (
+            <>
+              <span>
+                {locale === "fr" ? t("languages.fr") : t("languages.en")}
+              </span>
+              <ChevronDown />
+            </>
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => changeLanguage("fr")}>
-          <span className="flex-1"> {t("languages.fr")}</span>
+          <span className="flex-1">{t("languages.fr")}</span>
           {locale === "fr" && <Check />}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => changeLanguage("en")}>
-          <span className="flex-1"> {t("languages.en")}</span>
+          <span className="flex-1">{t("languages.en")}</span>
           {locale === "en" && <Check />}
         </DropdownMenuItem>
       </DropdownMenuContent>

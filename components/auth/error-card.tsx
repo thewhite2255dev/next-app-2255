@@ -13,9 +13,7 @@ export default function ErrorCard() {
       backButtonLabel={t("backButtonLabel")}
       backButtonHref="/auth/login"
     >
-      <div className="flex items-center justify-center">
-        <FormError message={t("genericError")} />
-      </div>
+      <FormError message={t("genericError")} />
     </CardWrapper>
   );
 }

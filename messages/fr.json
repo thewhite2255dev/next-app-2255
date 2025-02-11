@@ -26,7 +26,7 @@
     },
     "signupPage": {
       "title": "Inscription | {siteTitle}",
-      "description": "Créez un compte pour commencer à utiliser la plateforme"
+      "description": "Créez votre compte et profitez de toutes nos fonctionnalités."
     },
     "forgotPasswordPage": {
       "title": "Mot de passe oublié | {siteTitle}",
@@ -122,7 +122,7 @@
     },
     "header": {
       "description": "Nous supprimerons votre compte immédiatement",
-      "title": "Voulez-vous vraiment supprimer votre compte?"
+      "title": "Voulez-vous vraiment supprimer votre compte ?"
     },
     "warning": "Cette action n'est pas réversible. Veuillez vous en assurer"
   },
@@ -165,7 +165,7 @@
     }
   },
   "loginForm": {
-    "backButtonLabel": "Vous n'avez pas de compte? Inscrivez-vous",
+    "backButtonLabel": "Vous n'avez pas de compte ? Inscription",
     "buttons": {
       "confirmTwoFactorCode": "Confirmer",
       "forgotPassword": "Mot de passe oublié",
@@ -184,7 +184,7 @@
     },
     "header": {
       "label": {
-        "logIn": "Bienvenue à nouveau! Connectez-vous à votre compte",
+        "logIn": "Bienvenue à nouveau ! Connectez-vous à votre compte",
         "twoFactor": "Si vous avez un compte, nous avons envoyé un code à {email}. Entrez-le ci-dessous"
       },
       "titles": {
@@ -325,11 +325,11 @@
       }
     },
     "header": {
-      "label": "Créez un compte pour commencer à utiliser notre service",
+      "label": "Créez votre compte dès maintenant.",
       "title": "Inscription"
     },
     "submitButton": "S'inscrire",
-    "backButtonLabel": "Vous avez déjà un compte? Connexion"
+    "backButtonLabel": "Vous avez déjà un compte ? Connexion"
   },
   "twoFactorForm": {
     "fields": {
@@ -405,7 +405,7 @@
   "homePage": {
     "header": {
       "titles": {
-        "welcomeBack": "Bienvenue à nouveau {name}!",
+        "welcomeBack": "Bienvenue à nouveau {name} !",
         "welcome": "Bienvenue sur {siteTitle} !"
       },
       "subTitle": {
@@ -456,11 +456,21 @@
       "github": "Découvrez mon travail sur GitHub"
     }
   },
+  "authLayout": {
+    "footer": {
+      "copyright": "© {dateYears} {siteTitle}. Tous droits réservés",
+      "creator": "Créé par {creatorName}",
+      "github": "Découvrez mon travail sur GitHub"
+    }
+  },
   "errorCard": {
     "header": {
       "title": "Oups"
     },
     "backButtonLabel": "Retour à la connexion",
     "genericError": "Quelque chose s'est mal passé. Veuillez réessayer plus tard"
+  },
+  "cardWrapper": {
+    "or": "Ou"
   }
 }

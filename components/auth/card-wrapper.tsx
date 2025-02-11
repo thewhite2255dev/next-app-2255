@@ -10,6 +10,7 @@ import Header from "@/components/auth/header";
 import BackButton from "@/components/auth/back-button";
 import Social from "@/components/auth/social";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface CardWrapperProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
@@ -29,6 +30,8 @@ export default function CardWrapper({
   showSocial,
   className,
 }: CardWrapperProps) {
+  const t = useTranslations("cardWrapper");
+
   return (
     <Card className={cn("w-[425px] shadow-md", className)}>
       <CardHeader>
@@ -39,7 +42,9 @@ export default function CardWrapper({
         <CardFooter className="flex flex-col items-start space-y-6">
           <div className="flex w-full items-center">
             <div className="flex-grow border-t border-border"></div>
-            <span className="mx-2 text-sm text-muted-foreground">OR</span>
+            <span className="mx-2 text-sm uppercase text-muted-foreground">
+              {t("or")}
+            </span>
             <div className="flex-grow border-t border-border"></div>
           </div>
           <Social />
