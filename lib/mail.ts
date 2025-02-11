@@ -25,16 +25,16 @@ export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
         <span style="margin: 0;">Votre code d'authentification</span>
     </header>
     <main style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin-top: 20px;">
-        <p>Bonjour,</p>
-        <p>Voici votre code d'authentification à deux facteurs :</p>
+        <span>Bonjour,</span>
+        <span>Voici votre code d'authentification à deux facteurs :</span>
         <div style="background-color: #e0e0e0; padding: 10px; text-align: center; font-size: 24px; font-weight: bold; letter-spacing: 5px; margin: 20px 0;">
             ${token}
         </div>
-        <p>Ce code est valable pendant ${formattedExpiration}. Ne le partagez avec personne.</p>
-        <p>Si vous n'avez pas demandé ce code, veuillez ignorer cet email.</p>
+        <span>Ce code est valable pendant ${formattedExpiration}. Ne le partagez avec personne.</span>
+        <span>Si vous n'avez pas demandé ce code, veuillez ignorer cet email.</span>
     </main>
     <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
-        <p>Cet email a été envoyé par ${SiteConfig.title}. Tous droits réservés.</p>
+        <span>Cet email a été envoyé par ${SiteConfig.title}. Tous droits réservés.</span>
     </footer>
 </body>
 </html>`,
@@ -62,18 +62,18 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
         <span style="margin: 0;">Réinitialisation de mot de passe</span>
     </header>
     <main style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin-top: 20px;">
-        <p>Bonjour,</p>
-        <p>Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte. Si vous n'avez pas fait cette demande, vous pouvez ignorer cet email.</p>
-        <p>Pour réinitialiser votre mot de passe, veuillez cliquer sur le bouton ci-dessous :</p>
+        <span>Bonjour,</span>
+        <span>Nous avons reçu une demande de réinitialisation de mot de passe pour votre compte. Si vous n'avez pas fait cette demande, vous pouvez ignorer cet email.</span>
+        <span>Pour réinitialiser votre mot de passe, veuillez cliquer sur le bouton ci-dessous :</span>
         <div style="text-align: center; margin: 30px 0;">
             <a href="${confirmLink}" style="background-color: #3498db; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Réinitialiser mon mot de passe</a>
         </div>
-        <p>Ce lien expirera dans ${formattedExpiration}. Si vous avez besoin d'un nouveau lien, vous pouvez en demander un sur notre site.</p>
-        <p>Si vous avez des problèmes pour cliquer sur le bouton, copiez et collez l'URL suivante dans votre navigateur :</p>
-        <p style="word-break: break-all; color: #666;">${confirmLink}</p>
+        <span>Ce lien expirera dans ${formattedExpiration}. Si vous avez besoin d'un nouveau lien, vous pouvez en demander un sur notre site.</span>
+        <span>Si vous avez des problèmes pour cliquer sur le bouton, copiez et collez l'URL suivante dans votre navigateur :</span>
+        <span style="word-break: break-all; color: #666;">${confirmLink}</span>
     </main>
     <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
-        <p>Cet email a été envoyé par ${SiteConfig.title}. Tous droits réservés.</p>
+        <span>Cet email a été envoyé par ${SiteConfig.title}. Tous droits réservés.</span>
     </footer>
 </body>
 </html>`,
@@ -98,17 +98,17 @@ export const sendVerificationEmail = async (email: string, token: string) => {
         <span style="margin: 0;">Vérification de votre email</span>
     </header>
     <main style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin-top: 20px;">
-        <p>Bonjour,</p>
-        <p>Merci d'avoir créé un compte chez nous. Pour finaliser votre inscription, veuillez vérifier votre adresse email en cliquant sur le bouton ci-dessous :</p>
+        <span>Bonjour,</span>
+        <span>Merci d'avoir créé un compte chez nous. Pour finaliser votre inscription, veuillez vérifier votre adresse email en cliquant sur le bouton ci-dessous :</span>
         <div style="text-align: center; margin: 30px 0;">
             <a href="${confirmLink}" style="background-color: #9b59b6; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Vérifier mon adresse email</a>
         </div>
-        <p>Si vous n'avez pas créé de compte chez nous, vous pouvez ignorer cet email.</p>
-        <p>Si vous avez des problèmes pour cliquer sur le bouton, copiez et collez l'URL suivante dans votre navigateur :</p>
-        <p style="word-break: break-all; color: #666;">${confirmLink}</p>
+        <span>Si vous n'avez pas créé de compte chez nous, vous pouvez ignorer cet email.</span>
+        <span>Si vous avez des problèmes pour cliquer sur le bouton, copiez et collez l'URL suivante dans votre navigateur :</span>
+        <span style="word-break: break-all; color: #666;">${confirmLink}</span>
     </main>
     <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
-        <p>Cet email a été envoyé par ${SiteConfig.title}. Tous droits réservés.</p>
+        <span>Cet email a été envoyé par ${SiteConfig.title}. Tous droits réservés.</span>
     </footer>
 </body>
 </html>`,
