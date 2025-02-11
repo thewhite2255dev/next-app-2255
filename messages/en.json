@@ -168,7 +168,7 @@
     "buttons": {
       "confirmTwoFactorCode": "Confirm",
       "forgotPassword": "Forgot password",
-      "submit": "Login"
+      "submit": "Log in"
     },
     "errors": {
       "OAuthAccountNotLinked": "E-mail already used with different suppliers"
@@ -183,11 +183,11 @@
     },
     "header": {
       "label": {
-        "logIn": "Welcome again! Login to your account",
+        "logIn": "Welcome again! Connect to your account",
         "twoFactor": "If you have an account, we have sent a code to {email}. Enter it below"
       },
       "titles": {
-        "logIn": "Login",
+        "logIn": "Log in",
         "twoFactor": "Make sure it is you"
       }
     },
@@ -207,8 +207,8 @@
       "title": "Home | {siteTitle}"
     },
     "loginPage": {
-      "description": "Login to your account to access your features and settings",
-      "title": "Login | {siteTitle}"
+      "description": "Connect to your account to access your features and settings",
+      "title": "Log in | {siteTitle}"
     },
     "newPasswordPage": {
       "description": "Choose a new password to secure your account",
@@ -245,7 +245,7 @@
   },
   "navUser": {
     "items": {
-      "logIn": "Login",
+      "logIn": "Log in",
       "logOut": "Log out",
       "settings": "Settings"
     }
@@ -375,7 +375,7 @@
     }
   },
   "signupForm": {
-    "backButtonLabel": "Already have an account? Login",
+    "backButtonLabel": "Already have an account? Log in",
     "fields": {
       "email": {
         "label": "Email"
