@@ -5,11 +5,11 @@ import { prisma } from "@/lib/prisma";
 import { currentUser } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
 import bcrypt from "bcryptjs";
-import { GetStartedFormSchema } from "@/schemas/auth.schema";
+import { OnboardingFormSchema } from "@/schemas/auth";
 import { getTranslations } from "next-intl/server";
-import { GetStartedFormValues } from "@/types/auth.types";
+import { OnboardingFormValues } from "@/types/auth";
 
-export const updateProfileConfig = async (values: GetStartedFormValues) => {
+export const updateProfileConfig = async (values: OnboardingFormValues) => {
   const t = await getTranslations();
   const user = await currentUser();
 
@@ -23,10 +23,10 @@ export const updateProfileConfig = async (values: GetStartedFormValues) => {
     return { error: t("common.messages.notAuthorized") };
   }
 
-  const validateFields = GetStartedFormSchema(t).safeParse(values);
+  const validateFields = OnboardingFormSchema(t).safeParse(values);
 
   if (!validateFields.success) {
-    return { error: t("zod.common.messages.missingToken") };
+    return { error: t("zod.common.messages.invalidFields") };
   }
 
   const { username, password } = validateFields.data;

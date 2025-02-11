@@ -4,7 +4,7 @@ import { getUserById, getUserByUsername } from "@/data/auth/user";
 import { prisma } from "@/lib/prisma";
 import { currentUser } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
-import { AccountFormValues } from "@/types/settings.types";
+import { AccountFormValues } from "@/types/settings";
 import { getTranslations } from "next-intl/server";
 
 export const updateAccount = async (values: AccountFormValues) => {

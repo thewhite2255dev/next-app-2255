@@ -6,14 +6,13 @@ export const authRoutes = [
 ];
 
 export const DEFAULT_LOGIN_REDIRECT = "/";
-export const DEFAULT_START_REDIRECT = "/get-started";
+export const DEFAULT_ONBOARDING_REDIRECT = "/onboarding";
 
 export const apiAuthPrefix = "/api/auth";
-export const protectedRoutesPrefix = [
+export const protectedRoutes = [
   "/settings",
-  "/albums",
-  "/collections",
-  "/favorites",
-  "/archives",
-  DEFAULT_START_REDIRECT,
+  "/settings/account",
+  "/settings/security",
+  "/settings/appearance",
+  "/onboarding",
 ];

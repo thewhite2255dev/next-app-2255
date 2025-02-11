@@ -4,8 +4,8 @@ import { getUserByEmail } from "@/data/auth/user";
 import { getPasswordResetTokenByToken } from "@/data/auth/password-reset-token";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
-import { NewPasswordFormValues } from "@/types/auth.types";
-import { NewPasswordSchema } from "@/schemas/auth.schema";
+import { NewPasswordFormValues } from "@/types/auth";
+import { NewPasswordSchema } from "@/schemas/auth";
 import { getTranslations } from "next-intl/server";
 
 export const newPassword = async (

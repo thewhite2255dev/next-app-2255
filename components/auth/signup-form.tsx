@@ -19,8 +19,8 @@ import FormSuccess from "@/components/form-success";
 import { signup } from "@/actions/auth/signup";
 import { useState, useTransition } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { SignupFormValues } from "@/types/auth.types";
-import { SignupSchema } from "@/schemas/auth.schema";
+import { SignupFormValues } from "@/types/auth";
+import { SignupSchema } from "@/schemas/auth";
 import { useTranslations } from "next-intl";
 
 export default function SignupForm() {
@@ -48,7 +48,7 @@ export default function SignupForm() {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
+    startTransition(async () => {
       signup(values).then((data) => {
         if (data?.error) {
           setError(data?.error);
@@ -129,7 +129,7 @@ export default function SignupForm() {
                         disabled={isPending}
                         className="pr-10"
                       />
-                      {form.getValues().password !== "" && (
+                      {field.value && (
                         <div className="absolute inset-y-0 right-0 flex items-center justify-center p-3">
                           <Button
                             variant={null}

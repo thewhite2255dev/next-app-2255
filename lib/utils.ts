@@ -57,10 +57,23 @@ export async function generateUniqueUsername(
 }
 
 export function maskEmail(email: string) {
+  if (!email) return null;
+
   const [localPart, domain] = email.split("@");
   const maskedLocalPart =
     localPart[0] +
     "*".repeat(localPart.length - 2) +
     localPart[localPart.length - 1];
   return `${maskedLocalPart}@${domain}`;
+}
+
+export function generateAvatarFallback(name: string) {
+  if (!name) return null;
+
+  return name
+    .split(" ")
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
 }

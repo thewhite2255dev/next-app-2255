@@ -7,7 +7,7 @@ import { SiteConfig } from "./site-config";
 const SMTP_SERVER_HOST = process.env.SMTP_SERVER_HOST;
 const SMTP_SERVER_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMTP_SERVER_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
-const SITE_MAIL_RECIEVER = process.env.SITE_MAIL_RECIEVER;
+const SITE_MAIL_RECEIVER = process.env.SITE_MAIL_RECEIVER;
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -21,13 +21,11 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function sendMail({
-  from,
   to,
   subject,
   text,
   html,
 }: {
-  from?: string;
   to?: string;
   subject: string;
   text?: string;
@@ -55,7 +53,10 @@ export async function sendMail({
     html: html ? html : "",
   });
   console.log("Message Sent", info.messageId);
-  console.log("Mail sent to", to || SITE_MAIL_RECIEVER);
-  console.log("Mail sent from", from);
+  console.log("Mail sent to", to || SITE_MAIL_RECEIVER);
+  console.log(
+    "Mail sent from",
+    `"${SiteConfig.title}" <${SiteConfig.noReplyEmail}>`,
+  );
   return info;
 }

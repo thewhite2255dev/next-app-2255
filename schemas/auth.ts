@@ -41,7 +41,7 @@ export const SignupSchema = (t: (key: string) => string) =>
       ),
   });
 
-export const GetStartedFormSchema = (t: (key: string) => string) =>
+export const OnboardingFormSchema = (t: (key: string) => string) =>
   z.object({
     password: z.string().min(6, {
       message: t("zod.messages.passwordMin"),

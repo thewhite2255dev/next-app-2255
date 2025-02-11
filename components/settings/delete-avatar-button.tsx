@@ -18,20 +18,20 @@ export default function DeleteAvatarButton({
   const { update } = useSession();
 
   const handleDelete = async () => {
-    deleteAvatar().then((data) => {
-      if (data?.error) {
-        toast({
-          description: <ToastError message={data?.error} />,
-        });
-      }
+    const data = await deleteAvatar();
 
-      if (data?.success) {
-        update();
-        toast({
-          description: <ToastSuccess message={data?.success} />,
-        });
-      }
-    });
+    if (data?.error) {
+      toast({
+        description: <ToastError message={data?.error} />,
+      });
+    }
+
+    if (data?.success) {
+      await update();
+      toast({
+        description: <ToastSuccess message={data?.success} />,
+      });
+    }
   };
 
   return (

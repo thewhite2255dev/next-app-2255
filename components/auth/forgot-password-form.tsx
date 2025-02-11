@@ -18,8 +18,8 @@ import FormError from "@/components/form-error";
 import FormSuccess from "@/components/form-success";
 import { forgotPassword } from "@/actions/auth/forgot-password";
 import { useState, useTransition } from "react";
-import { ForgotPasswordFormValues } from "@/types/auth.types";
-import { ForgotPasswordSchema } from "@/schemas/auth.schema";
+import { ForgotPasswordFormValues } from "@/types/auth";
+import { ForgotPasswordSchema } from "@/schemas/auth";
 import { useTranslations } from "next-intl";
 
 export default function ForgotPasswordForm() {
@@ -40,7 +40,7 @@ export default function ForgotPasswordForm() {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
+    startTransition(async () => {
       forgotPassword(values).then((data) => {
         if (data?.error) {
           setError(data?.error);

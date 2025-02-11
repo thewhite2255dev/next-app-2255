@@ -6,7 +6,7 @@ import { getUserById } from "@/data/auth/user";
 import { prisma } from "@/lib/prisma";
 import { currentUser } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
-import { PasswordFormValues } from "@/types/settings.types";
+import { PasswordFormValues } from "@/types/settings";
 import { getTranslations } from "next-intl/server";
 
 export const updatePassword = async (values: PasswordFormValues) => {

@@ -22,7 +22,7 @@
     },
     "loginPage": {
       "title": "Connexion | {siteTitle}",
-      "description": "Connectez|vous à votre compte pour accéder à vos fonctionnalités et paramètres"
+      "description": "Connectez-vous à votre compte pour accéder à vos fonctionnalités et paramètres"
     },
     "signupPage": {
       "title": "Inscription | {siteTitle}",
@@ -37,14 +37,14 @@
       "description": "Choisissez un nouveau mot de passe pour sécuriser votre compte"
     },
     "newVerificationPage": {
-      "title": "Vérification de l'adresse e|mail | {siteTitle}",
-      "description": "Vérifiez votre adresse e|mail pour activer votre compte"
+      "title": "Vérification de l'adresse e-mail | {siteTitle}",
+      "description": "Vérifiez votre adresse e-mail pour activer votre compte"
     },
     "errorPage": {
       "title": "Erreur | {siteTitle}",
       "description": "Une erreur s'est produite. Veuillez réessayer plus tard"
     },
-    "getStartedPage": {
+    "onboardingPage": {
       "title": "Bienvenue | {siteTitle}",
       "description": "Complétez votre profil pour commencer à utiliser la plateforme"
     }
@@ -140,7 +140,7 @@
     },
     "submitButton": "Envoyer un e-mail de réinitialisation"
   },
-  "getStartedForm": {
+  "onboardingForm": {
     "backButtonLabel": "Retour à la connexion",
     "fields": {
       "name": {
@@ -185,7 +185,7 @@
     },
     "header": {
       "label": {
-        "logIn": "Bienvenue à nouveau ! Connectez-vous à votre compte",
+        "logIn": "Bienvenue à nouveau! Connectez-vous à votre compte",
         "twoFactor": "Si vous avez un compte, nous avons envoyé un code à {email}. Entrez-le ci-dessous"
       },
       "titles": {
@@ -238,9 +238,7 @@
         "actions": {
           "removeAvatar": "Supprimer l'image",
           "uploadAvatar": "Télécharger une image"
-        },
-        "description": "Ceci est votre photo de profil. Vous pouvez le modifier ou le supprimer",
-        "label": "Photo de profil"
+        }
       },
       "bio": {
         "description": "Écrivez une courte biographie pour vous décrire",
@@ -308,36 +306,47 @@
   },
   "settingsSecurityPage": {
     "header": {
-      "label": "Modifiez votre mot de passe et gérez vos paramètres de sécurité",
-      "title": "Sécurité et authentification"
+      "label": "Sécurisez votre compte avec un mot de passe robuste et des paramètres d'authentification à deux facteurs",
+      "title": "Sécurité"
     }
   },
   "signupForm": {
-    "backButtonLabel": "Vous avez déjà un compte ? Connectez-vous",
     "fields": {
       "email": {
-        "label": "E-mail"
-      },
-      "name": {
-        "label": "Nom"
+        "label": "Adresse e-mail"
       },
       "password": {
         "label": "Mot de passe"
       },
+      "termsOfUse": {
+        "description": "En vous inscrivant, vous acceptez nos conditions d'utilisation et notre politique de confidentialité"
+      },
       "username": {
         "label": "Nom d'utilisateur"
+      },
+      "name": {
+        "label": "Nom"
       }
     },
     "header": {
-      "label": "Créez un compte pour commencer",
+      "label": "Créez un compte pour commencer à utiliser notre service",
       "title": "Inscription"
     },
-    "submitButton": "S'inscrire"
+    "submitButton": "S'inscrire",
+    "backButtonLabel": "Vous avez déjà un compte? Connexion"
+  },
+  "twoFactorForm": {
+    "fields": {
+      "code": {
+        "label": "Code de vérification"
+      }
+    },
+    "submitButton": "Confirmer"
   },
   "themeSwitcher": {
     "options": {
-      "dark": "Sombre",
-      "light": "Lumière",
+      "dark": "Mode sombre",
+      "light": "Mode clair",
       "system": "Système"
     }
   },
@@ -373,7 +382,7 @@
       }
     },
     "messages": {
-      "bioMax": "Bio ne peut pas dépasser 200 caractères",
+      "bioMax": "La biographie ne peut pas dépasser 200 caractères",
       "confirmationRequired": "Une confirmation est requise",
       "currentPasswordRequired": "Le mot de passe actuel est requis",
       "deleteConfirmation": {
@@ -381,10 +390,10 @@
         "span2": "supprimer mon compte",
         "span3": "pour confirmer"
       },
-      "email": "S'il vous plaît, mettez une adresse email valide",
+      "email": "Veuillez entrer une adresse e-mail valide",
       "locationMax": "L'emplacement ne peut pas dépasser 100 caractères",
       "nameMax": "Le nom doit comporter au maximum 50 caractères",
-      "nameMin": "Le nom doit être d'au moins 2 caractères",
+      "nameMin": "Le nom doit comporter au moins 2 caractères",
       "nameMin2": "Le nom doit comporter au moins 2 caractères",
       "newPasswordMin": "Le nouveau mot de passe doit comporter au moins 6 caractères",
       "newPasswordRequired": "Un nouveau mot de passe est requis",
@@ -393,18 +402,18 @@
       "passwordRequired": "Le mot de passe est requis",
       "usernameMax": "Le nom d'utilisateur doit comporter au plus 30 caractères",
       "usernameMin": "Le nom d'utilisateur doit comporter au moins 3 caractères",
-      "usernameRegex": "Le nom d'utilisateur ne doit contenir que des lettres, des nombres, des traits de disposition et des soulignements",
-      "usernameRegexSpecialChars": "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres, des soulignements (_) ou des tirets (-), et ne peut pas démarrer ou se terminer par des caractères spéciaux"
+      "usernameRegex": "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres, des tirets ou des soulignements",
+      "usernameRegexSpecialChars": "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres, des soulignements (_) ou des tirets (-), et ne peut pas commencer ni se terminer par des caractères spéciaux"
     }
   },
   "homePage": {
     "header": {
       "titles": {
-        "welcomeBack": "Bienvenue {name}!",
+        "welcomeBack": "Bienvenue à nouveau {name}!",
         "welcome": "Bienvenue sur {siteTitle} !"
       },
       "subTitle": {
-        "welcome": "Explorez nos fonctionnalités, connectez-vous à la communauté et commencez votre voyage",
+        "welcome": "Explorez nos fonctionnalités, rejoignez la communauté et commencez votre parcours",
         "welcomeBack": "Nous sommes heureux de vous revoir"
       }
     },
@@ -413,29 +422,29 @@
         "title": "À propos de {siteTitle}"
       },
       "content": {
-        "p1": "Il s'agit d'une plateforme de démarrage pour les projets full stack avec Next.js. Elle fournit une structure efficace pour développer des applications Web à l'aide de technologies modernes. Les technologies clés qui alimentent la plateforme sont :",
-        "p2": "Que vous créiez votre première application ou que vous gériez des projets complexes, cette plateforme vous offre les outils pour démarrer rapidement avec une configuration minimale",
+        "p1": "Il s'agit d'une plateforme pour les projets full stack utilisant Next.js. Elle fournit une structure efficace pour le développement d'applications web avec des technologies modernes. Les technologies clés sont :",
+        "p2": "Que vous créiez votre première application ou que vous gériez des projets complexes, cette plateforme offre les outils nécessaires pour démarrer rapidement avec une configuration minimale",
         "ul": {
           "li": {
             "nextjs": {
               "title": "Next.js",
-              "description": ": pour le rendu côté serveur et le développement complet et transparent"
+              "description": ": pour le rendu côté serveur et un développement complet et transparent"
             },
             "tailwindCSS": {
               "title": "Tailwind CSS",
-              "description": ": pour un style efficace, personnalisable et réactif"
+              "description": ": pour un style personnalisé, réactif et efficace"
             },
             "prisma": {
               "title": "Prisma",
-              "description": ": pour la gestion de base de données et le support ORM, garantissant une interaction fluide des données"
+              "description": ": pour la gestion de base de données et le support ORM, garantissant une interaction fluide avec les données"
             },
             "postgresql": {
               "title": "PostgreSQL",
-              "description": ": une base de données relationnelle puissante pour un stockage de données sécurisé et évolutif"
+              "description": ": une base de données relationnelle puissante pour un stockage sécurisé et évolutif"
             },
             "shadcn": {
               "title": "ShadCN",
-              "description": ": une bibliothèque de composants qui simplifie la création de belles interfaces utilisateur avec cohérence"
+              "description": ": une bibliothèque de composants qui simplifie la création d'interfaces utilisateurs cohérentes et esthétiques"
             },
             "lucideReact": {
               "title": "Lucide React",
@@ -448,12 +457,12 @@
     "footer": {
       "copyright": "© {dateYears} {siteTitle}. Tous droits réservés",
       "creator": "Créé par {creatorName}",
-      "github": "Retrouvez mon travail sur"
+      "github": "Découvrez mon travail sur GitHub"
     }
   },
   "errorCard": {
     "header": {
-      "title": "Oops"
+      "title": "Oups"
     },
     "backButtonLabel": "Retour à la connexion",
     "genericError": "Quelque chose s'est mal passé. Veuillez réessayer plus tard"

@@ -6,8 +6,8 @@ import { currentUser } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
 import cloudinary from "@/lib/cloudinary-config";
 import bcrypt from "bcryptjs";
-import { DeleteAccountFormValues } from "@/types/settings.types";
-import { DeleteAccountSchema } from "@/schemas/settings.schema";
+import { DeleteAccountFormValues } from "@/types/settings";
+import { DeleteAccountSchema } from "@/schemas/settings";
 import { getCloudinaryPublicId } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
 

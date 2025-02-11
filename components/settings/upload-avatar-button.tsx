@@ -1,6 +1,6 @@
 "use client";
 
-import { CloudinaryResource } from "@/types/cloudinary.types";
+import { CloudinaryResource } from "@/types/cloudinary";
 import { useSession } from "next-auth/react";
 import {
   CldUploadWidget,
@@ -17,15 +17,15 @@ interface UploadButtonProps {
 export default function UploadButton({ children }: UploadButtonProps) {
   const { update } = useSession();
 
-  const handleUpload = (results: CloudinaryUploadWidgetResults) => {
-    updateAvatar(results.info as CloudinaryResource).then((data) => {
-      if (data?.success) {
-        update();
-        toast({
-          description: <ToastSuccess message={data?.success} />,
-        });
-      }
-    });
+  const handleUpload = async (results: CloudinaryUploadWidgetResults) => {
+    const data = await updateAvatar(results.info as CloudinaryResource);
+
+    if (data?.success) {
+      await update();
+      toast({
+        description: <ToastSuccess message={data?.success} />,
+      });
+    }
   };
 
   return (

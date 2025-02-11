@@ -20,15 +20,12 @@ export default function ThemeSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button variant="ghost" size="icon" className="h-8 w-8">
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        className="w-[--radix-dropdown-menu-trigger-width] min-w-56"
-      >
+      <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("system")}>
           <div className="flex flex-1 items-center space-x-2">
             <Monitor className="h-4 w-4" />
@@ -41,14 +38,14 @@ export default function ThemeSwitcher() {
             <Moon className="h-4 w-4" />
             <span>{t("options.dark")}</span>
           </div>
-          {theme === "dark" && <Check />}{" "}
+          {theme === "dark" && <Check />}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           <div className="flex flex-1 items-center space-x-2">
             <Sun className="h-4 w-4" />
             <span>{t("options.light")}</span>
           </div>
-          {theme === "light" && <Check />}{" "}
+          {theme === "light" && <Check />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function SettingsAccountPage() {
   const t = await getTranslations("settingsAccountPage");
-
   const user = await currentUser();
+
   return (
     <div className="space-y-6">
       <Header
@@ -32,7 +32,7 @@ export default async function SettingsAccountPage() {
           title={t("header.titles.deleteAccount")}
           label={t("header.labels.deleteAccount")}
         />
-        <DeleteAccountButton>
+        <DeleteAccountButton user={user}>
           <Button type="button" variant="destructive">
             {t("deleteAccountButton")}
           </Button>

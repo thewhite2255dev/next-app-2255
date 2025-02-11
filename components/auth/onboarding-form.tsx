@@ -13,30 +13,34 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import FormError from "@/components/form-error";
-import { useEffect, useState, useTransition } from "react";
+import { useState, useTransition } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { useSession } from "next-auth/react";
 
-import useCurrentUser from "@/hooks/use-current-user";
 import { useRouter } from "next/navigation";
 import { updateProfileConfig } from "@/actions/auth/update-profile-config";
-import { GetStartedFormValues } from "@/types/auth.types";
-import { GetStartedFormSchema } from "@/schemas/auth.schema";
-import CardWrapper from "./get-started-card-wrapper";
+import { OnboardingFormValues } from "@/types/auth";
+import { OnboardingFormSchema } from "@/schemas/auth";
+import CardWrapper from "./onboarding-card-wrapper";
 import { useTranslations } from "next-intl";
+import { ExtendedUser } from "@/next-auth";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 
-export default function GetStartedForm() {
+interface OnboardingFormProps {
+  user?: ExtendedUser;
+}
+
+export default function OnboardingForm({ user }: OnboardingFormProps) {
   const t = useTranslations();
-  const user = useCurrentUser();
-  const { update } = useSession();
 
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const { update } = useSession();
   const router = useRouter();
 
-  const form = useForm<GetStartedFormValues>({
-    resolver: zodResolver(GetStartedFormSchema(t)),
+  const form = useForm<OnboardingFormValues>({
+    resolver: zodResolver(OnboardingFormSchema(t)),
     defaultValues: {
       name: user?.name || "",
       username: user?.username || "",
@@ -48,36 +52,28 @@ export default function GetStartedForm() {
     setShowPassword((prev) => !prev);
   };
 
-  const handleSubmit = (values: GetStartedFormValues) => {
+  const handleSubmit = (values: OnboardingFormValues) => {
     setError("");
 
-    startTransition(() => {
-      updateProfileConfig(values).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+    startTransition(async () => {
+      const data = await updateProfileConfig(values);
 
-        if (data?.success) {
-          update();
-          router.push("/");
-        }
-      });
+      if (data?.error) {
+        setError(data?.error);
+      }
+
+      if (data?.success) {
+        await await update();
+        router.push(DEFAULT_LOGIN_REDIRECT);
+      }
     });
   };
 
-  useEffect(() => {
-    if (user) {
-      if (user.password) {
-        router.push("/");
-      }
-    }
-  }, [user, router]);
-
   return (
     <CardWrapper
-      headerTitle={t("getStartedForm.header.title")}
-      headerLabel={t("getStartedForm.header.label")}
-      backButtonLabel={t("getStartedForm.backButtonLabel")}
+      headerTitle={t("onboardingForm.header.title")}
+      headerLabel={t("onboardingForm.header.label")}
+      backButtonLabel={t("onboardingForm.backButtonLabel")}
     >
       <Form {...form}>
         <form
@@ -91,7 +87,7 @@ export default function GetStartedForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t("getStartedForm.fields.name.label")}</FormLabel>
+                  <FormLabel>{t("onboardingForm.fields.name.label")}</FormLabel>
                   <FormControl>
                     <Input {...field} disabled={isPending} />
                   </FormControl>
@@ -105,7 +101,7 @@ export default function GetStartedForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    {t("getStartedForm.fields.username.label")}
+                    {t("onboardingForm.fields.username.label")}
                   </FormLabel>
                   <FormControl>
                     <Input {...field} disabled={isPending} />
@@ -120,7 +116,7 @@ export default function GetStartedForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
-                    {t("getStartedForm.fields.password.label")}
+                    {t("onboardingForm.fields.password.label")}
                   </FormLabel>
                   <FormControl>
                     <div className="relative">
@@ -130,7 +126,7 @@ export default function GetStartedForm() {
                         disabled={isPending}
                         className="pr-10"
                       />
-                      {form.getValues().password !== "" && (
+                      {field.value && (
                         <div className="absolute inset-y-0 right-0 flex items-center justify-center p-3">
                           <Button
                             variant={null}
@@ -156,7 +152,7 @@ export default function GetStartedForm() {
           <FormError message={error} />
           <div>
             <Button type="submit" disabled={isPending} className="w-full">
-              {t("getStartedForm.submitButton")}
+              {t("onboardingForm.submitButton")}
             </Button>
           </div>
         </form>

@@ -27,11 +27,7 @@ export default function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="flex items-center space-x-2"
-        >
+        <Button variant="ghost" size="icon" className="h-8 w-8">
           <Languages />
         </Button>
       </DropdownMenuTrigger>

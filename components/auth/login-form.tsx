@@ -29,8 +29,8 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "../ui/input-otp";
-import { LoginFormValues } from "@/types/auth.types";
-import { LoginSchema } from "@/schemas/auth.schema";
+import { LoginFormValues } from "@/types/auth";
+import { LoginSchema } from "@/schemas/auth";
 import { useTranslations } from "next-intl";
 import { maskEmail } from "@/lib/utils";
 
@@ -67,7 +67,7 @@ export default function LoginForm() {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
+    startTransition(async () => {
       resendCode(email).then((data) => {
         if (data?.error) {
           setError(data?.error);
@@ -84,21 +84,21 @@ export default function LoginForm() {
     setError("");
     setSuccess("");
 
-    startTransition(() => {
-      login(values, callbackUrl).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+    startTransition(async () => {
+      const data = await login(values, callbackUrl);
 
-        if (data?.success) {
-          update();
-          setSuccess(data?.success);
-        }
+      if (data?.error) {
+        setError(data?.error);
+      }
 
-        if (data?.twoFactor) {
-          setShowTwoFactor(true);
-        }
-      });
+      if (data?.success) {
+        await update();
+        setSuccess(data?.success);
+      }
+
+      if (data?.twoFactor) {
+        setShowTwoFactor(true);
+      }
     });
   };
 
@@ -211,7 +211,7 @@ export default function LoginForm() {
                             disabled={isPending}
                             className="pr-10"
                           />
-                          {form.getValues().password !== "" && (
+                          {field.value && (
                             <div className="absolute inset-y-0 right-0 flex items-center justify-center p-3">
                               <Button
                                 variant={null}

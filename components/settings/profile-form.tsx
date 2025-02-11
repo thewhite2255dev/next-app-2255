@@ -16,18 +16,19 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Trash2, Upload, User } from "lucide-react";
+import { Trash2, Upload } from "lucide-react";
 import { ExtendedUser } from "@/next-auth";
 import { useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { updateProfile } from "@/actions/settings/update-profile";
-import { ProfileFormValues } from "@/types/settings.types";
-import { ProfileFormSchema } from "@/schemas/settings.schema";
+import { ProfileFormValues } from "@/types/settings";
+import { ProfileFormSchema } from "@/schemas/settings";
 import ToastError from "../toast-error";
 import ToastSuccess from "../toast-success";
 import UploadAvatarButton from "./upload-avatar-button";
 import DeleteAvatarButton from "./delete-avatar-button";
 import { useTranslations } from "next-intl";
+import { generateAvatarFallback } from "@/lib/utils";
 
 interface ProfileFormProps {
   user?: ExtendedUser;
@@ -37,6 +38,8 @@ export default function ProfileForm({ user }: ProfileFormProps) {
   const t = useTranslations();
   const { update } = useSession();
   const [isPending, startTransition] = useTransition();
+
+  const avatarFallback = generateAvatarFallback(user?.name as string);
 
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(ProfileFormSchema(t)),
@@ -49,21 +52,21 @@ export default function ProfileForm({ user }: ProfileFormProps) {
   });
 
   const handleSubmit = (values: ProfileFormValues) => {
-    startTransition(() => {
-      updateProfile(values).then((data) => {
-        if (data?.error) {
-          toast({
-            description: <ToastError message={data?.error} />,
-          });
-        }
+    startTransition(async () => {
+      const data = await updateProfile(values);
 
-        if (data?.success) {
-          update();
-          toast({
-            description: <ToastSuccess message={data?.success} />,
-          });
-        }
-      });
+      if (data?.error) {
+        toast({
+          description: <ToastError message={data?.error} />,
+        });
+      }
+
+      if (data?.success) {
+        await update();
+        toast({
+          description: <ToastSuccess message={data?.success} />,
+        });
+      }
     });
   };
   return (
@@ -82,8 +85,8 @@ export default function ProfileForm({ user }: ProfileFormProps) {
                   alt={user?.name}
                   className="object-cover"
                 />
-                <AvatarFallback className="rounded-full">
-                  <User className="h-16 w-16" />
+                <AvatarFallback className="rounded-full text-2xl">
+                  {avatarFallback}
                 </AvatarFallback>
               </Avatar>
               <div className="flex gap-2">

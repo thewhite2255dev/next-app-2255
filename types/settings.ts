@@ -5,7 +5,7 @@ import {
   DeleteAccountSchema,
   PasswordFormSchema,
   ProfileFormSchema,
-} from "@/schemas/settings.schema";
+} from "@/schemas/settings";
 
 export type ProfileFormValues = z.infer<ReturnType<typeof ProfileFormSchema>>;
 export type AccountFormValues = z.infer<ReturnType<typeof AccountFormSchema>>;

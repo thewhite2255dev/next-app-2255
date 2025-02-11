@@ -1,8 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 export const socialButtons = [
   {
@@ -20,8 +22,12 @@ export const socialButtons = [
 ];
 
 export default function Social() {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callback_url") || undefined;
   const handleClick = (provider: string) => {
-    signIn(provider);
+    signIn(provider, {
+      redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
+    });
   };
 
   return (

@@ -32,16 +32,16 @@ export default async function HomePage() {
       <div className="text-center">
         {user ? (
           <>
-            <h1 className="mb-4 text-3xl font-bold">
+            <span className="mb-4 text-3xl font-bold">
               {t("header.titles.welcomeBack", { name: user.name })}
-            </h1>
+            </span>
             <p className="mb-6 text-lg">{t("header.subTitle.welcomeBack")}</p>
           </>
         ) : (
           <>
-            <h1 className="mb-4 text-4xl font-bold">
+            <span className="mb-4 text-4xl font-bold">
               {t("header.titles.welcome", { siteTitle: SiteConfig.title })}
-            </h1>
+            </span>
             <p className="mb-6 text-lg">{t("header.subTitle.welcome")}</p>
           </>
         )}

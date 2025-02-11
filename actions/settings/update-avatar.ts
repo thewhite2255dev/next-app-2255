@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 import cloudinary from "@/lib/cloudinary-config";
 import { getCloudinaryPublicId } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
-import { CloudinaryResource } from "@/types/cloudinary.types";
+import { CloudinaryResource } from "@/types/cloudinary";
 
 export const updateAvatar = async (resource: CloudinaryResource) => {
   const t = await getTranslations();

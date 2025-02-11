@@ -4,7 +4,7 @@ import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
 import { getUserByEmail } from "./data/auth/user";
 import bcrypt from "bcryptjs";
-import { LoginSchema } from "./schemas/auth.schema";
+import { LoginSchema } from "./schemas/auth";
 import { getTranslations } from "next-intl/server";
 
 export default {

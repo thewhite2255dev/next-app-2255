@@ -18,8 +18,8 @@ import { useTransition } from "react";
 import { toast } from "@/hooks/use-toast";
 import { ExtendedUser } from "@/next-auth";
 import { updateAuthentication } from "@/actions/settings/update-authentication";
-import { AuthenticationFormValues } from "@/types/settings.types";
-import { AuthenticationFormSchema } from "@/schemas/settings.schema";
+import { AuthenticationFormValues } from "@/types/settings";
+import { AuthenticationFormSchema } from "@/schemas/settings";
 import ToastError from "../toast-error";
 import ToastSuccess from "../toast-success";
 import { useTranslations } from "next-intl";
@@ -40,7 +40,7 @@ export default function AuthenticationForm({ user }: AuthenticationFormProps) {
   });
 
   const handleSubmitTwoFactor = (values: { isTwoFactorEnabled: boolean }) => {
-    startTransition(() => {
+    startTransition(async () => {
       updateAuthentication(values).then((data) => {
         if (data?.error) {
           toast({
@@ -94,7 +94,7 @@ export default function AuthenticationForm({ user }: AuthenticationFormProps) {
             type="button"
             onClick={() => form.handleSubmit(handleSubmitTwoFactor)()}
           >
-            {t("authenticationForm.submitButton")}{" "}
+            {t("authenticationForm.submitButton")}
           </Button>
         </div>
       </div>

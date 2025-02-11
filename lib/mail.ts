@@ -22,7 +22,7 @@ export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
     <header style="background-color: #4CAF50; color: white; text-align: center; padding: 10px;">
-        <h1 style="margin: 0;">Votre code d'authentification</h1>
+        <span style="margin: 0;">Votre code d'authentification</span>
     </header>
     <main style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin-top: 20px;">
         <p>Bonjour,</p>
@@ -59,7 +59,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
     <header style="background-color: #3498db; color: white; text-align: center; padding: 10px;">
-        <h1 style="margin: 0;">Réinitialisation de mot de passe</h1>
+        <span style="margin: 0;">Réinitialisation de mot de passe</span>
     </header>
     <main style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin-top: 20px;">
         <p>Bonjour,</p>
@@ -95,7 +95,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
     <header style="background-color: #9b59b6; color: white; text-align: center; padding: 10px;">
-        <h1 style="margin: 0;">Vérification de votre email</h1>
+        <span style="margin: 0;">Vérification de votre email</span>
     </header>
     <main style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; margin-top: 20px;">
         <p>Bonjour,</p>

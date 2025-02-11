@@ -6,8 +6,8 @@ import { prisma } from "@/lib/prisma";
 import { getUserByEmail, getUserByUsername } from "@/data/auth/user";
 import { generateVerificationToken } from "@/data/auth/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
-import { SignupFormValues } from "@/types/auth.types";
-import { SignupSchema } from "@/schemas/auth.schema";
+import { SignupFormValues } from "@/types/auth";
+import { SignupSchema } from "@/schemas/auth";
 import { getTranslations } from "next-intl/server";
 
 export const signup = async (values: SignupFormValues) => {

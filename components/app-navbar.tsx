@@ -12,7 +12,12 @@ export default function AppNavbar() {
   return (
     <header className="flex items-center justify-between border-b p-2">
       <div className="flex items-center space-x-2">
-        <Button variant="ghost" size="icon" onClick={toggleSidebar}>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-8 w-8"
+          onClick={toggleSidebar}
+        >
           <PanelLeft />
         </Button>
       </div>

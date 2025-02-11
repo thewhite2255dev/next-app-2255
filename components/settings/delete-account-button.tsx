@@ -5,7 +5,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import FormError from "@/components/form-error";
 import FormSuccess from "@/components/form-success";
-import useCurrentUser from "@/hooks/use-current-user";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "../ui/separator";
@@ -38,22 +37,24 @@ import {
 } from "@/components/ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { signOut, useSession } from "next-auth/react";
-import { DeleteAccountFormValues } from "@/types/settings.types";
-import { DeleteAccountSchema } from "@/schemas/settings.schema";
+import { DeleteAccountFormValues } from "@/types/settings";
+import { DeleteAccountSchema } from "@/schemas/settings";
 import { deleteAccount } from "@/actions/settings/delete-account";
 import { useTranslations } from "next-intl";
 import { maskEmail } from "@/lib/utils";
 import { Eye, EyeOff } from "lucide-react";
+import { ExtendedUser } from "@/next-auth";
 
 interface DeleteAccountButtonProps {
   children: React.ReactNode;
+  user?: ExtendedUser;
 }
 
 export default function DeleteAccountButton({
   children,
+  user,
 }: DeleteAccountButtonProps) {
   const t = useTranslations();
-  const user = useCurrentUser();
   const maskedEmail = user && maskEmail(user?.email);
   const { update } = useSession();
   const [error, setError] = useState("");
@@ -80,17 +81,17 @@ export default function DeleteAccountButton({
     setError("");
     setSuccess("");
 
-    startTransition(() => {
-      deleteAccount(values).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+    startTransition(async () => {
+      const data = await deleteAccount(values);
 
-        if (data?.success) {
-          signOut({ redirectTo: "/" });
-          update();
-        }
-      });
+      if (data?.error) {
+        setError(data?.error);
+      }
+
+      if (data?.success) {
+        signOut({ redirectTo: "/" });
+        await update();
+      }
     });
   };
 
@@ -173,7 +174,7 @@ export default function DeleteAccountButton({
                               disabled={isPending}
                               className="pr-10"
                             />
-                            {form.getValues().password !== "" && (
+                            {field.value && (
                               <div className="absolute inset-y-0 right-0 flex items-center justify-center p-3">
                                 <Button
                                   variant={null}
@@ -296,7 +297,7 @@ export default function DeleteAccountButton({
                             disabled={isPending}
                             className="pr-10"
                           />
-                          {form.getValues().password !== "" && (
+                          {field.value && (
                             <div className="absolute inset-y-0 right-0 flex items-center justify-center p-3">
                               <Button
                                 variant={null}

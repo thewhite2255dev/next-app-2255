@@ -4,7 +4,7 @@ import { getUserById } from "@/data/auth/user";
 import { prisma } from "@/lib/prisma";
 import { currentUser } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
-import { ProfileFormValues } from "@/types/settings.types";
+import { ProfileFormValues } from "@/types/settings";
 import { getTranslations } from "next-intl/server";
 
 export const updateProfile = async (values: ProfileFormValues) => {

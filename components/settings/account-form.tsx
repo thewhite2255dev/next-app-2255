@@ -26,8 +26,8 @@ import { useTransition } from "react";
 import { useSession } from "next-auth/react";
 import { ExtendedUser } from "@/next-auth";
 import { updateAccount } from "@/actions/settings/update-account";
-import { AccountFormValues } from "@/types/settings.types";
-import { AccountFormSchema } from "@/schemas/settings.schema";
+import { AccountFormValues } from "@/types/settings";
+import { AccountFormSchema } from "@/schemas/settings";
 import ToastError from "../toast-error";
 import ToastSuccess from "../toast-success";
 import { useTranslations } from "next-intl";
@@ -50,21 +50,21 @@ export default function AccountForm({ user }: AccountFormProps) {
   });
 
   const handleSubmit = (values: AccountFormValues) => {
-    startTransition(() => {
-      updateAccount(values).then((data) => {
-        if (data?.error) {
-          toast({
-            description: <ToastError message={data?.error} />,
-          });
-        }
+    startTransition(async () => {
+      const data = await updateAccount(values);
 
-        if (data?.success) {
-          update();
-          toast({
-            description: <ToastSuccess message={data?.success} />,
-          });
-        }
-      });
+      if (data?.error) {
+        toast({
+          description: <ToastError message={data?.error} />,
+        });
+      }
+
+      if (data?.success) {
+        await update();
+        toast({
+          description: <ToastSuccess message={data?.success} />,
+        });
+      }
     });
   };
 

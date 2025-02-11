@@ -10,10 +10,14 @@ interface HeaderProps {
 export default function Header({ title, label }: HeaderProps) {
   return (
     <div className="flex w-full flex-col text-center">
-      <h1 className={cn("text-2xl font-semibold leading-none tracking-tight")}>
+      <span
+        className={cn("text-2xl font-semibold leading-none tracking-tight")}
+      >
         {title}
-      </h1>
-      {label && <p className="mt-2 text-sm text-muted-foreground">{label}</p>}
+      </span>
+      {label && (
+        <span className="mt-2 text-sm text-muted-foreground">{label}</span>
+      )}
     </div>
   );
 }

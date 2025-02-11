@@ -8,13 +8,10 @@ import { routing } from "./i18n/routing";
 import {
   authRoutes,
   DEFAULT_LOGIN_REDIRECT,
-  protectedRoutesPrefix,
+  DEFAULT_ONBOARDING_REDIRECT,
+  protectedRoutes,
   publicRoutes,
 } from "./routes";
-
-const publicPages = publicRoutes;
-
-const authPages = authRoutes;
 
 const testPathnameRegex = (pages: string[], pathName: string): boolean => {
   return RegExp(
@@ -28,11 +25,16 @@ const intlMiddleware = createIntlMiddleware(routing);
 const authMiddleware = auth((req) => {
   const { nextUrl } = req;
 
-  const isAuthPage = testPathnameRegex(authPages, nextUrl.pathname);
-  const session = req.auth;
-  const isProtectedRoute = protectedRoutesPrefix.some((prefix) =>
-    nextUrl.pathname.startsWith(prefix),
+  const isAuthPage = testPathnameRegex(authRoutes, nextUrl.pathname);
+  const user = req.auth?.user;
+  const session = !!req.auth;
+  const isProtectedRoute = testPathnameRegex(protectedRoutes, nextUrl.pathname);
+  const isOnboardingRoute = testPathnameRegex(
+    [DEFAULT_ONBOARDING_REDIRECT],
+    nextUrl.pathname,
   );
+
+  console.log("Middleware", user);
 
   if (!session && isProtectedRoute) {
     let callbackUrl = nextUrl.pathname;
@@ -50,6 +52,16 @@ const authMiddleware = auth((req) => {
     );
   }
 
+  if (!isOnboardingRoute && user?.isOAuth && !user?.password) {
+    return NextResponse.redirect(new URL(DEFAULT_ONBOARDING_REDIRECT, nextUrl));
+  }
+
+  if (session && isOnboardingRoute) {
+    if (user?.isOAuth && user?.password) {
+      return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+    }
+  }
+
   if (session && isAuthPage) {
     return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
   }
@@ -60,8 +72,8 @@ const authMiddleware = auth((req) => {
 const middleware = (req: NextRequest) => {
   const { nextUrl } = req;
 
-  const isPublicPage = testPathnameRegex(publicPages, nextUrl.pathname);
-  const isAuthPage = testPathnameRegex(authPages, nextUrl.pathname);
+  const isPublicPage = testPathnameRegex(publicRoutes, nextUrl.pathname);
+  const isAuthPage = testPathnameRegex(authRoutes, nextUrl.pathname);
 
   if (isAuthPage) {
     return (authMiddleware as any)(req);

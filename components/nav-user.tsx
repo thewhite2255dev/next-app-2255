@@ -22,20 +22,14 @@ import Link from "next/link";
 import useCurrentUser from "@/hooks/use-current-user";
 import { useTranslations } from "next-intl";
 import LoginButton from "./auth/login-button";
+import { generateAvatarFallback } from "@/lib/utils";
 
 export default function NavUser() {
   const { isMobile, toggleSidebar } = useSidebar();
   const user = useCurrentUser();
   const t = useTranslations("navUser");
 
-  const avatarFallback =
-    user?.name &&
-    user.name
-      .split(" ")
-      .slice(0, 2)
-      .map((part) => part[0])
-      .join("")
-      .toUpperCase();
+  const avatarFallback = generateAvatarFallback(user?.name as string);
 
   return (
     <SidebarMenu>
@@ -65,7 +59,7 @@ export default function NavUser() {
               </SidebarMenuButton>
             </DropdownMenuTrigger>
             <DropdownMenuContent
-              className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+              className="w-56"
               side={isMobile ? "bottom" : "right"}
               align="end"
               sideOffset={4}
