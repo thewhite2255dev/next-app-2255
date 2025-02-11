@@ -82,11 +82,7 @@ export default function AccountForm({ user }: AccountFormProps) {
             <FormItem>
               <FormLabel>{t("accountForm.fields.username.label")}</FormLabel>
               <FormControl>
-                <Input
-                  disabled={isPending}
-                  placeholder={t("accountForm.fields.username.placeholder")}
-                  {...field}
-                />
+                <Input disabled={isPending} {...field} />
               </FormControl>
               <FormDescription>
                 {t("accountForm.fields.username.description")}

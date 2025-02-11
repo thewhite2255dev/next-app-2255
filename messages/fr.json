@@ -61,8 +61,7 @@
       },
       "username": {
         "description": "Nom affiché sur votre profil et dans les communications par courrier électronique",
-        "label": "Nom d'utilisateur",
-        "placeholder": "Votre nom d'utilisateur"
+        "label": "Nom d'utilisateur"
       }
     },
     "submitButton": "Mettre à jour le compte"
@@ -246,18 +245,15 @@
         "placeholder": "Parlez-nous un peu de vous"
       },
       "email": {
-        "label": "Adresse email",
-        "placeholder": "Votre email"
+        "label": "Adresse email"
       },
       "location": {
         "description": "Indiquez votre localisation pour accéder à des services sur mesure",
-        "label": "Emplacement",
-        "placeholder": "Votre emplacement"
+        "label": "Emplacement"
       },
       "name": {
         "description": "Ce nom sera visible publiquement. Vous pouvez utiliser un pseudonyme ou votre vrai nom",
-        "label": "Nom",
-        "placeholder": "Votre nom"
+        "label": "Nom"
       }
     },
     "submitButton": "Mettre à jour le profil"

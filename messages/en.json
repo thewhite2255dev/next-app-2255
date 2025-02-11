@@ -11,8 +11,7 @@
       },
       "username": {
         "description": "Name displayed on your profile and in email communications",
-        "label": "User name",
-        "placeholder": "Your username"
+        "label": "User name"
       }
     },
     "submitButton": "Update"
@@ -307,18 +306,15 @@
         "placeholder": "Tell us a bit about you"
       },
       "email": {
-        "label": "E-mail address",
-        "placeholder": "Your email"
+        "label": "E-mail address"
       },
       "location": {
         "description": "Indicate your location to access tailor -made services",
-        "label": "Location",
-        "placeholder": "Your location"
+        "label": "Location"
       },
       "name": {
         "description": "This name will be visible publicly. \nYou can use a pseudonym or your real name",
-        "label": "Name",
-        "placeholder": "Your name"
+        "label": "Name"
       }
     },
     "submitButton": "Update the profile"

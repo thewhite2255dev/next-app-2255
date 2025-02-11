@@ -121,11 +121,7 @@ export default function ProfileForm({ user }: ProfileFormProps) {
             <FormItem>
               <FormLabel> {t("profileForm.fields.name.label")}</FormLabel>
               <FormControl>
-                <Input
-                  disabled={isPending}
-                  placeholder={t("profileForm.fields.name.placeholder")}
-                  {...field}
-                />
+                <Input disabled={isPending} {...field} />
               </FormControl>
               <FormDescription>
                 {t("profileForm.fields.name.description")}
@@ -141,11 +137,7 @@ export default function ProfileForm({ user }: ProfileFormProps) {
             <FormItem>
               <FormLabel> {t("profileForm.fields.email.label")}</FormLabel>
               <FormControl>
-                <Input
-                  disabled={true}
-                  placeholder={t("profileForm.fields.email.placeholder")}
-                  {...field}
-                />
+                <Input disabled={true} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -187,12 +179,7 @@ export default function ProfileForm({ user }: ProfileFormProps) {
             <FormItem>
               <FormLabel>{t("profileForm.fields.location.label")}</FormLabel>
               <FormControl>
-                <Input
-                  maxLength={100}
-                  disabled={isPending}
-                  placeholder={t("profileForm.fields.location.placeholder")}
-                  {...field}
-                />
+                <Input maxLength={100} disabled={isPending} {...field} />
               </FormControl>
               <FormDescription>
                 {t("profileForm.fields.location.description")}
