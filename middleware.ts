@@ -34,8 +34,6 @@ const authMiddleware = auth((req) => {
     nextUrl.pathname,
   );
 
-  console.log("Middleware", user);
-
   if (!session && isProtectedRoute) {
     let callbackUrl = nextUrl.pathname;
 

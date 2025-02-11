@@ -234,7 +234,7 @@ export default function DeleteAccountButton({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <Separator />
-        <div className="space-y-4 p-4">
+        <div className="space-y-4">
           <FormError message={t("deleteAccountForm.warning")} />
           <Form {...form}>
             <form

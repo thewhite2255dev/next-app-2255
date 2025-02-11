@@ -41,15 +41,15 @@ export default function ForgotPasswordForm() {
     setSuccess("");
 
     startTransition(async () => {
-      forgotPassword(values).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+      const data = await forgotPassword(values);
 
-        if (data?.success) {
-          setSuccess(data?.success);
-        }
-      });
+      if (data?.error) {
+        setError(data?.error);
+      }
+
+      if (data?.success) {
+        setSuccess(data?.success);
+      }
     });
   };
 

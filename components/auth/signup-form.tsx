@@ -49,15 +49,15 @@ export default function SignupForm() {
     setSuccess("");
 
     startTransition(async () => {
-      signup(values).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+      const data = await signup(values);
 
-        if (data?.success) {
-          setSuccess(data?.success);
-        }
-      });
+      if (data?.error) {
+        setError(data?.error);
+      }
+
+      if (data?.success) {
+        setSuccess(data?.success);
+      }
     });
   };
 

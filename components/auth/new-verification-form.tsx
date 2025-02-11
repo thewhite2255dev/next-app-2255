@@ -19,7 +19,7 @@ export default function NewVerificationForm() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     if (success || error) return;
 
     if (!token) {
@@ -27,15 +27,15 @@ export default function NewVerificationForm() {
       return;
     }
 
-    newVerification(token).then((data) => {
-      if (data?.error) {
-        setError(data?.error);
-      }
+    const data = await newVerification(token);
 
-      if (data?.success) {
-        setSuccess(data?.success);
-      }
-    });
+    if (data?.error) {
+      setError(data?.error);
+    }
+
+    if (data?.success) {
+      setSuccess(data?.success);
+    }
   }, [token, success, error, t]);
 
   useEffect(() => {

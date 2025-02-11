@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRight, LucideIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import {
   SidebarGroup,
   SidebarGroupContent,
@@ -18,18 +18,10 @@ import {
   CollapsibleTrigger,
   CollapsibleContent,
 } from "./ui/collapsible";
+import { SidebarMainItems } from "@/types/main";
 
 interface AppSidebarMainProps {
-  sidebarMainItems: {
-    icon: LucideIcon;
-    label: string;
-    href: string;
-    isCollapsed?: boolean;
-    items?: {
-      label: string;
-      href: string;
-    }[];
-  }[];
+  sidebarMainItems: SidebarMainItems[];
 }
 
 export default function AppSidebarMain({

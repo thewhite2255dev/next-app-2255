@@ -51,15 +51,15 @@ export default function NewPasswordForm() {
     setSuccess("");
 
     startTransition(async () => {
-      newPassword(values, token).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+      const data = await newPassword(values, token);
 
-        if (data?.success) {
-          setSuccess(data?.success);
-        }
-      });
+      if (data?.error) {
+        setError(data?.error);
+      }
+
+      if (data?.success) {
+        setSuccess(data?.success);
+      }
     });
   };
 

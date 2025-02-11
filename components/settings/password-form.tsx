@@ -47,19 +47,19 @@ export default function PasswordForm() {
 
   const handleSubmitPassword = (values: PasswordFormValues) => {
     startTransition(async () => {
-      updatePassword(values).then((data) => {
-        if (data?.error) {
-          toast({
-            description: <ToastError message={data?.error} />,
-          });
-        }
+      const data = await updatePassword(values);
 
-        if (data?.success) {
-          toast({
-            description: <ToastSuccess message={data?.success} />,
-          });
-        }
-      });
+      if (data?.error) {
+        toast({
+          description: <ToastError message={data?.error} />,
+        });
+      }
+
+      if (data?.success) {
+        toast({
+          description: <ToastSuccess message={data?.success} />,
+        });
+      }
     });
   };
 

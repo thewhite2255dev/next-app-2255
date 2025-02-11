@@ -41,19 +41,19 @@ export default function AuthenticationForm({ user }: AuthenticationFormProps) {
 
   const handleSubmitTwoFactor = (values: { isTwoFactorEnabled: boolean }) => {
     startTransition(async () => {
-      updateAuthentication(values).then((data) => {
-        if (data?.error) {
-          toast({
-            description: <ToastError message={data?.error} />,
-          });
-        }
+      const data = await updateAuthentication(values);
 
-        if (data?.success) {
-          toast({
-            description: <ToastSuccess message={data?.success} />,
-          });
-        }
-      });
+      if (data?.error) {
+        toast({
+          description: <ToastError message={data?.error} />,
+        });
+      }
+
+      if (data?.success) {
+        toast({
+          description: <ToastSuccess message={data?.success} />,
+        });
+      }
     });
   };
 

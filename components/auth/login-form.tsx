@@ -68,15 +68,15 @@ export default function LoginForm() {
     setSuccess("");
 
     startTransition(async () => {
-      resendCode(email).then((data) => {
-        if (data?.error) {
-          setError(data?.error);
-        }
+      const data = await resendCode(email);
 
-        if (data?.success) {
-          setSuccess(data?.success);
-        }
-      });
+      if (data?.error) {
+        setError(data?.error);
+      }
+
+      if (data?.success) {
+        setSuccess(data?.success);
+      }
     });
   };
 
