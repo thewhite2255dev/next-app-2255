@@ -401,8 +401,8 @@
   },
   "themeSwitcher": {
     "options": {
-      "dark": "Dark fashion",
-      "light": "Clear fashion",
+      "dark": "Dark mode",
+      "light": "Light mode",
       "system": "System"
     }
   },
