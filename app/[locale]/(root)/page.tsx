@@ -18,14 +18,14 @@ export default async function HomePage() {
   const t = await getTranslations("homePage");
   const user = await currentUser();
 
-  const techKeys = [
-    "nextjs",
-    "tailwindCSS",
-    "prisma",
-    "postgresql",
-    "shadcn",
-    "lucideReact",
-  ];
+  const techLinks = {
+    nextjs: "https://nextjs.org/",
+    tailwindCSS: "https://tailwindcss.com/",
+    prisma: "https://www.prisma.io/",
+    postgresql: "https://www.postgresql.org/",
+    shadcn: "https://ui.shadcn.com/",
+    lucideReact: "https://lucide.dev/",
+  };
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
@@ -56,9 +56,16 @@ export default async function HomePage() {
         <CardContent>
           <p className="mb-4 text-lg">{t("card.content.p1")}</p>
           <ul className="list-disc pl-6 text-lg">
-            {techKeys.map((key) => (
+            {Object.entries(techLinks).map(([key, url]) => (
               <li key={key}>
-                <strong>{t(`card.content.ul.li.${key}.title`)}</strong>
+                <Link
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-info hover:underline hover:underline-offset-2"
+                >
+                  <strong>{t(`card.content.ul.li.${key}.title`)}</strong>
+                </Link>
                 {t(`card.content.ul.li.${key}.description`)}
               </li>
             ))}
@@ -85,7 +92,7 @@ export default async function HomePage() {
             href={SiteConfig.author.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 underline underline-offset-2"
+            className="text-info hover:underline hover:underline-offset-2"
           >
             GitHub
           </Link>
