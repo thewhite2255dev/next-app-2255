@@ -47,7 +47,6 @@ export default function ProfileForm({ user }: ProfileFormProps) {
       name: user?.name || "",
       bio: user?.bio || "",
       location: user?.location || "",
-      email: maskEmail(user?.email as string) || "",
     },
   });
 
@@ -124,19 +123,13 @@ export default function ProfileForm({ user }: ProfileFormProps) {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel> {t("profileForm.fields.email.label")}</FormLabel>
-              <FormControl>
-                <Input disabled={true} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <FormItem key={user?.email}>
+          <FormLabel>{t("profileForm.fields.email.label")}</FormLabel>
+          <FormControl>
+            <Input value={maskEmail(user?.email as string)} disabled />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
         <FormField
           control={form.control}
           name="bio"

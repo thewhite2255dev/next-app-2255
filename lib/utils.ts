@@ -56,22 +56,31 @@ export async function generateUniqueUsername(
   return username;
 }
 
-export function maskEmail(email: string) {
-  if (!email) return null;
+export function maskEmail(email: string | undefined | null): string {
+  if (!email) return "";
 
   const [localPart, domain] = email.split("@");
-  const maskedLocalPart =
-    localPart[0] +
-    localPart[1] +
-    localPart[2] +
-    "*".repeat(localPart.length - 4) +
-    localPart[localPart.length - 1];
-  const maskedEmail = `${maskedLocalPart}@${domain}`;
-  return `${maskedEmail}`;
+
+  if (!localPart || !domain) return email;
+
+  let maskedLocalPart = localPart;
+  if (localPart.length > 4) {
+    maskedLocalPart =
+      localPart.slice(0, 3) +
+      "*".repeat(localPart.length - 4) +
+      localPart.slice(-1);
+  } else {
+    maskedLocalPart =
+      localPart[0] +
+      "*".repeat(localPart.length - 2) +
+      localPart[localPart.length - 1];
+  }
+
+  return `${maskedLocalPart}@${domain}`;
 }
 
 export function generateAvatarFallback(name: string) {
-  if (!name) return null;
+  if (!name) return "";
 
   return name
     .split(" ")

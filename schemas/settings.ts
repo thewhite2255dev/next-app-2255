@@ -12,9 +12,6 @@ export const ProfileFormSchema = (t: (key: string) => string) =>
         message: t("zod.messages.nameMax"),
       })
       .optional(),
-    email: z.string().email({
-      message: t("zod.messages.email"),
-    }),
     bio: z.string().max(200, t("zod.messages.bioMax")).optional(),
     location: z.string().max(100, t("zod.messages.locationMax")).optional(),
   });
