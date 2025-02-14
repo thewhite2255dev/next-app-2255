@@ -28,7 +28,7 @@ import ToastSuccess from "../toast-success";
 import UploadAvatarButton from "./upload-avatar-button";
 import DeleteAvatarButton from "./delete-avatar-button";
 import { useTranslations } from "next-intl";
-import { generateAvatarFallback } from "@/lib/utils";
+import { generateAvatarFallback, maskEmail } from "@/lib/utils";
 
 interface ProfileFormProps {
   user?: ExtendedUser;
@@ -47,7 +47,7 @@ export default function ProfileForm({ user }: ProfileFormProps) {
       name: user?.name || "",
       bio: user?.bio || "",
       location: user?.location || "",
-      email: user?.email || "",
+      email: maskEmail(user?.email as string) || "",
     },
   });
 
@@ -76,42 +76,36 @@ export default function ProfileForm({ user }: ProfileFormProps) {
         onSubmit={form.handleSubmit(handleSubmit)}
         className="space-y-6"
       >
-        <div>
+        <div className="mx-auto flex w-full max-w-lg flex-col space-y-6 text-sm">
           <div className="flex items-center justify-center">
-            <div className="flex flex-col items-center space-y-6 text-sm">
-              <Avatar className="h-24 w-24 rounded-full shadow">
-                <AvatarImage
-                  src={user?.image}
-                  alt={user?.name}
-                  className="object-cover"
-                />
-                <AvatarFallback className="rounded-full text-2xl">
-                  {avatarFallback}
-                </AvatarFallback>
-              </Avatar>
-              <div className="flex gap-2">
-                <UploadAvatarButton>
-                  <Button type="button" variant="outline" className="w-full">
-                    <Upload className="h-4 w-4 lg:mr-2" />
-                    <span>
-                      {t("profileForm.fields.avatar.actions.uploadAvatar")}
-                    </span>
-                  </Button>
-                </UploadAvatarButton>
-                <DeleteAvatarButton>
-                  <Button
-                    type="button"
-                    variant="destructive"
-                    className="w-full"
-                  >
-                    <Trash2 className="h-4 w-4 lg:mr-2" />
-                    <span>
-                      {t("profileForm.fields.avatar.actions.removeAvatar")}
-                    </span>
-                  </Button>
-                </DeleteAvatarButton>
-              </div>
-            </div>
+            <Avatar className="h-24 w-24 rounded-full shadow">
+              <AvatarImage
+                src={user?.image}
+                alt={user?.name}
+                className="object-cover"
+              />
+              <AvatarFallback className="rounded-full text-2xl">
+                {avatarFallback}
+              </AvatarFallback>
+            </Avatar>
+          </div>
+          <div className="flex gap-2">
+            <UploadAvatarButton className="w-1/2">
+              <Button type="button" variant="outline" className="w-full">
+                <Upload className="h-4 w-4 lg:mr-2" />
+                <span className="sr-only sm:not-sr-only">
+                  {t("profileForm.fields.avatar.actions.uploadAvatar")}
+                </span>
+              </Button>
+            </UploadAvatarButton>
+            <DeleteAvatarButton className="w-1/2">
+              <Button type="button" variant="destructive" className="w-full">
+                <Trash2 className="h-4 w-4 lg:mr-2" />
+                <span className="sr-only sm:not-sr-only">
+                  {t("profileForm.fields.avatar.actions.removeAvatar")}
+                </span>
+              </Button>
+            </DeleteAvatarButton>
           </div>
         </div>
         <FormField

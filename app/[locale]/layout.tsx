@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import Providers from "@/components/providers";
@@ -24,12 +24,6 @@ export const metadata: Metadata = {
   description: SiteConfig.description,
   authors: [{ name: SiteConfig.author.name, url: SiteConfig.author.githubUrl }],
   keywords: SiteConfig.keywords,
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
 };
 
 export default async function LocalLayout({

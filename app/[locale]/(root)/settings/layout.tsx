@@ -48,7 +48,7 @@ export default function SettingsLayout({ children }: SettingsLayoutProps) {
       </div>
       <div className="flex flex-col gap-4 py-4 md:flex-row">
         <SettingsSidebar items={settingsSidebarItems} />
-        <main className="lg:w-2/3">{children}</main>
+        <main className="flex-1">{children}</main>
       </div>
     </div>
   );

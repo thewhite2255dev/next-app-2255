@@ -9,12 +9,16 @@ import {
 import ToastSuccess from "../toast-success";
 import { toast } from "@/hooks/use-toast";
 import { updateAvatar } from "@/actions/settings/update-avatar";
+import { cn } from "@/lib/utils";
 
-interface UploadButtonProps {
+interface UploadButtonProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
-export default function UploadButton({ children }: UploadButtonProps) {
+export default function UploadButton({
+  children,
+  className,
+}: UploadButtonProps) {
   const { update } = useSession();
 
   const handleUpload = async (results: CloudinaryUploadWidgetResults) => {
@@ -39,7 +43,10 @@ export default function UploadButton({ children }: UploadButtonProps) {
     >
       {({ open }) => {
         return (
-          <span className="cursor-pointer" onClick={() => open()}>
+          <span
+            onClick={() => open()}
+            className={cn("cursor-pointer", className)}
+          >
             {children}
           </span>
         );

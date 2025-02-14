@@ -62,9 +62,12 @@ export function maskEmail(email: string) {
   const [localPart, domain] = email.split("@");
   const maskedLocalPart =
     localPart[0] +
-    "*".repeat(localPart.length - 2) +
+    localPart[1] +
+    localPart[2] +
+    "*".repeat(localPart.length - 4) +
     localPart[localPart.length - 1];
-  return `${maskedLocalPart}@${domain}`;
+  const maskedEmail = `${maskedLocalPart}@${domain}`;
+  return `${maskedEmail}`;
 }
 
 export function generateAvatarFallback(name: string) {
