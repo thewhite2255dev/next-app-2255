@@ -10,7 +10,7 @@ export default function AppNavbar() {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <header className="sticky top-0 flex w-full items-center justify-between border-b bg-background p-2">
+    <header className="sticky top-0 z-50 flex w-full items-center justify-between border-b bg-background p-2">
       <div className="flex items-center space-x-2">
         <Button
           variant="ghost"
