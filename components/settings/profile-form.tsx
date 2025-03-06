@@ -83,7 +83,7 @@ export default function ProfileForm({ user }: ProfileFormProps) {
                 alt={user?.name}
                 className="object-cover"
               />
-              <AvatarFallback className="rounded-full text-2xl">
+              <AvatarFallback className="rounded-full text-3xl font-semibold">
                 {avatarFallback}
               </AvatarFallback>
             </Avatar>

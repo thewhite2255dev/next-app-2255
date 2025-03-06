@@ -62,11 +62,11 @@ body {
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --success: 156 62.8% 30.6%;
-    --success-foreground: 0 0% 98%;
-    --info: 220 60% 45%;
-    --info-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 139 86% 57%;
+    --success-foreground: 0 0% 100%;
+    --info: 208 86% 57%;
+    --info-foreground: 0 0% 100%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
@@ -98,5 +98,14 @@ body {
   html,
   body {
     scrollbar-width: thin;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

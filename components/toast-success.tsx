@@ -13,11 +13,8 @@ export default function ToastSuccess({
   if (!message) return null;
 
   return (
-    <div
-      className={cn("flex items-center space-x-2 text-success", className)}
-      {...props}
-    >
-      <CircleCheck className="h-4 w-4" />
+    <div className={cn("flex items-center space-x-2", className)} {...props}>
+      <CircleCheck className="h-6 w-6 fill-success text-background" />
       <span>{message}</span>
     </div>
   );

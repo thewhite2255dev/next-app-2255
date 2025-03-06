@@ -44,6 +44,7 @@ export default async function LocalLayout({
   return (
     <html lang={locale} className="h-full w-full" suppressHydrationWarning>
       <body
+        translate="no"
         className={`${geistSans.variable} ${geistMono.variable} h-full w-full antialiased`}
       >
         <Providers>

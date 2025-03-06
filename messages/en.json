@@ -3,7 +3,7 @@
     "fields": {
       "role": {
         "enum": {
-          "admin": "Administrator",
+          "admin": "Director",
           "user": "User"
         },
         "label": "Role",
@@ -11,10 +11,10 @@
       },
       "username": {
         "description": "Name displayed on your profile and in email communications",
-        "label": "User name"
+        "label": "Username"
       }
     },
-    "submitButton": "Update"
+    "submitButton": "Update account"
   },
   "appSidebar": {
     "items": {
@@ -22,35 +22,57 @@
     }
   },
   "appearanceForm": {
-    "header": {
-      "description": "Personalize the appearance and conviviality of your interface as you understand it",
-      "title": "Theme"
-    },
+    "header": {},
     "options": {
-      "dark": "Dark",
-      "light": "Light",
-      "system": "System"
+      "lightMode": "Light",
+      "darkMode": "Dark",
+      "systemMode": "System"
+    },
+    "language": {
+      "description": "Choose the language of your interface for an experience adapted to your preferences.",
+      "en": {
+        "label": "English"
+      },
+      "fr": {
+        "label": "French"
+      },
+      "label": "Language"
+    },
+    "theme": {
+      "darkMode": "Dark",
+      "description": "Personalize the appearance and conviviality of your interface as you understand it",
+      "label": "Theme",
+      "lightMode": "Clear",
+      "systemMode": "System"
+    }
+  },
+  "authLayout": {
+    "footer": {
+      "copyright": "© {dateYears} {siteTitle} created by {creatorName}. All rights reserved"
     }
   },
   "authenticationForm": {
     "fields": {
       "isTwoFactorEnabled": {
-        "description": "Activate two factors authentication to secure your account",
-        "label": "Two -factor authentication"
+        "description": "Enable two-factor authentication to secure your account",
+        "label": "Two-factor authentication"
       }
     },
     "submitButton": "Update authentication"
   },
+  "cardWrapper": {
+    "or": "Or"
+  },
   "common": {
     "messages": {
       "generic": "Something went wrong",
-      "notAuthorized": "Unauthorized"
+      "notAuthorized": "Not authorized"
     }
   },
   "deleteAccountForm": {
     "buttons": {
       "cancel": "Cancel",
-      "submit": "DELETE"
+      "submit": "Delete"
     },
     "fields": {
       "confirmation": {
@@ -62,105 +84,100 @@
       },
       "email": {
         "label": {
-          "span1": "Enter your email",
+          "span1": "Enter your email address",
           "span2": "to continue"
         }
       },
       "password": {
-        "label": "Confirm the password"
+        "label": "Confirm password"
       }
     },
     "header": {
       "description": "We will delete your account immediately",
-      "title": "Do you really want to delete your account?"
+      "title": "Are you sure you want to delete your account?"
     },
-    "warning": "This action is not reversible. Please ensure it"
+    "warning": "This action is irreversible. Please be certain"
   },
   "errorCard": {
-    "backButtonLabel": "Back to login",
-    "genericError": "Something went wrong. Please try again later",
     "header": {
       "title": "Oops"
-    }
+    },
+    "backButtonLabel": "Back to login",
+    "genericError": "Something went wrong. Please try again later"
   },
   "forgotPasswordForm": {
     "backButtonLabel": "Back to login",
     "fields": {
       "email": {
-        "label": "E-mail"
+        "label": "Email"
       }
     },
     "header": {
-      "label": "Enter your email address. A link to reset your password will be sent to you",
+      "label": "Please enter your email address. A password reset link will be sent to you.",
       "title": "Forgot password"
     },
-    "submitButton": "Send a reset email"
+    "submitButton": "Send reset email"
   },
   "homePage": {
-    "card": {
-      "content": {
-        "p1": "This is a platform for Full Stack projects using Next.js. It provides an effective structure for the development of web applications with modern technologies. Key technologies are:",
-        "p2": "Whether you create your first application or manage complex projects, this platform offers the tools necessary to start quickly with a minimum configuration",
-        "ul": {
-          "li": {
-            "lucideReact": {
-              "description": ": a collection of open source and customizable icons for React applications",
-              "title": "Lucide React"
-            },
-            "nextjs": {
-              "description": ": for rendering on the server side and a complete and transparent development",
-              "title": "Next.js"
-            },
-            "postgresql": {
-              "description": ": a powerful relational database for secure and scalable storage",
-              "title": "PostgreSql"
-            },
-            "prisma": {
-              "description": ": for database management and Orm support, guaranteeing fluid interaction with data",
-              "title": "Prisma"
-            },
-            "shadcn": {
-              "description": ": a library of components that simplifies the creation of coherent and aesthetic user interfaces",
-              "title": "Shadcn"
-            },
-            "tailwindCSS": {
-              "description": ": for a personalized, responsive and efficient style",
-              "title": "Tailwind CSS"
-            }
-          }
-        }
+    "header": {
+      "titles": {
+        "welcomeBack": "Welcome back, {name}!",
+        "welcome": "Welcome to {siteTitle}!"
       },
+      "subTitle": {
+        "welcome": "Explore our features, join the community, and start your journey",
+        "welcomeBack": "We're glad to see you again"
+      }
+    },
+    "card": {
       "header": {
         "title": "About {siteTitle}"
-      }
-    },
-    "footer": {
-      "copyright": "© {dateYears} {siteTitle}. All rights reserved",
-      "creator": "Created by {creatorName}",
-      "github": "Discover my work on Github"
-    },
-    "header": {
-      "subTitle": {
-        "welcome": "Explore our features, join the community and start your journey",
-        "welcomeBack": "We are happy to see you again"
       },
-      "titles": {
-        "welcome": "Welcome to {siteTitle}!",
-        "welcomeBack": "Welcome again {name}!"
+      "content": {
+        "p1": "This is a platform for full-stack projects using Next.js. It provides an efficient framework for developing web applications with modern technologies. Key technologies include:",
+        "p2": "Whether you're building your first application or managing complex projects, this platform offers the tools you need to get started quickly with minimal configuration.",
+        "technologies": {
+          "nextjs": {
+            "title": "Next.js",
+            "description": "for server-side rendering and seamless development"
+          },
+          "tailwindCSS": {
+            "title": "Tailwind CSS",
+            "description": "for customizable, responsive, and efficient styling"
+          },
+          "prisma": {
+            "title": "Prisma",
+            "description": "for database management and ORM support, ensuring smooth data interaction"
+          },
+          "postgresql": {
+            "title": "PostgreSQL",
+            "description": "a powerful relational database for secure and scalable storage"
+          },
+          "shadcn": {
+            "title": "ShadCN",
+            "description": "a component library that simplifies creating cohesive and aesthetic user interfaces"
+          },
+          "lucideReact": {
+            "title": "Lucide React",
+            "description": "A collection of open-source, customizable icons for React applications"
+          }
+        }
       }
-    }
-  },
-  "authLayout": {
+    },
     "footer": {
-      "copyright": "© {dateYears} {siteTitle}. All rights reserved",
+      "copyright": "© {dateYears} {siteTitle} created by {creatorName}. All rights reserved",
       "creator": "Created by {creatorName}",
-      "github": "Discover my work on Github"
+      "github": "Discover my work on GitHub"
     }
   },
   "languageSwitcher": {
-    "languages": {
-      "en": "English",
-      "fr": "French"
+    "options": {
+      "en": {
+        "label": "English"
+      },
+      "fr": {
+        "label": "French"
+      }
     }
   },
   "loginForm": {
@@ -171,11 +188,11 @@
       "submit": "Log in"
     },
     "errors": {
-      "OAuthAccountNotLinked": "E-mail already used with different suppliers"
+      "OAuthAccountNotLinked": "Email already in use with another provider"
     },
     "fields": {
       "email": {
-        "label": "E-mail"
+        "label": "Email"
       },
       "password": {
         "label": "Password"
@@ -183,71 +200,89 @@
     },
     "header": {
       "label": {
-        "logIn": "Welcome again! Connect to your account",
-        "twoFactor": "If you have an account, we have sent a code to {email}. Enter it below"
+        "logIn": "Welcome back! Log in to your account",
+        "twoFactor": "If you have an account, we've sent a code to {email}. Enter it below"
       },
       "titles": {
-        "logIn": "Log in",
-        "twoFactor": "Make sure it is you"
+        "logIn": "Login",
+        "twoFactor": "Verify it's really you"
       }
     },
-    "resendTwoFactorCode": "Haven't received the code? Dismiss"
+    "resendTwoFactorCode": "Didn't receive the code? Resend"
   },
   "metadata": {
-    "errorPage": {
-      "description": "An error occurred. Please try again later",
-      "title": "Error | {siteTitle}"
-    },
-    "forgotPasswordPage": {
-      "description": "Reset your password to recover access to your account",
-      "title": "Forgot password | {siteTitle}"
-    },
-    "homePage": {
-      "description": "Discover the platform features and start your journey",
-      "title": "Home | {siteTitle}"
-    },
-    "loginPage": {
-      "description": "Connect to your account to access your features and settings",
-      "title": "Log in | {siteTitle}"
-    },
-    "newPasswordPage": {
-      "description": "Choose a new password to secure your account",
-      "title": "Password reset | {siteTitle}"
-    },
-    "newVerificationPage": {
-      "description": "Check your email address to activate your account",
-      "title": "E-mail address verification | {siteTitle}"
-    },
-    "onboardingPage": {
-      "description": "Complete your profile to start using the platform",
-      "title": "Welcome | {siteTitle}"
-    },
     "settingsAccountPage": {
-      "description": "Manage your account information and your profile safety",
-      "title": "Account settings | {siteTitle}"
+      "title": "Account settings | {siteTitle}",
+      "description": "Manage your account information and profile security"
     },
     "settingsAppearancePage": {
-      "description": "Adjust the appearance and theme of your application",
-      "title": "Interface customization | {siteTitle}"
+      "title": "Interface customization | {siteTitle}",
+      "description": "Adjust the look and feel of your application"
     },
     "settingsProfilePage": {
-      "description": "Change your profile information and configure your visibility",
-      "title": "Profile management | {siteTitle}"
+      "title": "Profile management | {siteTitle}",
+      "description": "Edit your profile information and configure your visibility"
     },
     "settingsSecurityPage": {
-      "description": "Change your password and configure advanced safety options",
-      "title": "Security settings | {siteTitle}"
+      "title": "Security settings | {siteTitle}",
+      "description": "Change your password and set advanced security options"
+    },
+    "homePage": {
+      "title": "Home | {siteTitle}",
+      "description": "Discover the platform's features and start your journey"
+    },
+    "loginPage": {
+      "title": "Login | {siteTitle}",
+      "description": "Log in to your account to access your features and settings"
     },
     "signupPage": {
       "title": "Sign up | {siteTitle}",
-      "description": "Create your account and take advantage of all our features."
+      "description": "Create your account and take advantage of all our features"
+    },
+    "forgotPasswordPage": {
+      "title": "Forgot password | {siteTitle}",
+      "description": "Reset your password to regain access to your account"
+    },
+    "newPasswordPage": {
+      "title": "Reset password | {siteTitle}",
+      "description": "Choose a new password to secure your account"
+    },
+    "newVerificationPage": {
+      "title": "Verify email | {siteTitle}",
+      "description": "Verify your email address to activate your account"
+    },
+    "errorPage": {
+      "title": "Error | {siteTitle}",
+      "description": "An error occurred. Please try again later"
+    },
+    "onboardingPage": {
+      "title": "Welcome | {siteTitle}",
+      "description": "Complete your profile to start using the platform"
     }
   },
   "navUser": {
     "items": {
       "logIn": "Log in",
       "logOut": "Log out",
-      "settings": "Settings"
+      "settings": "Settings",
+      "preferences": {
+        "title": "Preferences",
+        "theme": {
+          "label": "Theme",
+          "lightMode": "Light",
+          "darkMode": "Dark",
+          "systemMode": "System"
+        },
+        "language": {
+          "label": "Language",
+          "en": {
+            "label": "English"
+          },
+          "fr": {
+            "label": "French"
+          }
+        }
+      }
     }
   },
   "newPasswordForm": {
@@ -259,14 +294,14 @@
     },
     "header": {
       "label": "Choose a new password to secure your account",
-      "title": "Password reset"
+      "title": "Reset password"
     },
     "submitButton": "Reset password"
   },
   "newVerificationForm": {
     "backButtonLabel": "Back to login",
     "header": {
-      "title": "E-mail address verification"
+      "title": "Verify email"
     }
   },
   "onboardingForm": {
@@ -279,76 +314,76 @@
         "label": "Password"
       },
       "username": {
-        "label": "User name"
+        "label": "Username"
       }
     },
     "header": {
       "label": "Complete your profile to continue",
-      "title": "Welcome to the platform"
+      "title": "Welcome"
     },
     "submitButton": "Continue"
   },
   "passwordForm": {
     "fields": {
       "newPassword": {
-        "label": "New Password"
+        "label": "New password"
       },
       "password": {
         "label": "Current password"
       }
     },
-    "submitButton": "Update the password"
+    "submitButton": "Update password"
   },
   "profileForm": {
     "fields": {
       "avatar": {
         "actions": {
-          "removeAvatar": "Delete the image",
-          "uploadAvatar": "Download an image"
+          "removeAvatar": "Delete image",
+          "uploadAvatar": "Upload an image"
         }
       },
       "bio": {
-        "description": "Write a short biography to describe you",
-        "label": "Biography",
-        "placeholder": "Tell us a bit about you"
+        "description": "Write a short bio to describe yourself",
+        "label": "Bio",
+        "placeholder": "Tell us a little about yourself"
       },
       "email": {
-        "label": "E-mail address"
+        "label": "Email address"
       },
       "location": {
-        "description": "Indicate your location to access tailor -made services",
+        "description": "Enter your location to access customized services",
         "label": "Location"
       },
       "name": {
-        "description": "This name will be visible publicly. You can use a pseudonym or your real name",
+        "description": "This name will be publicly visible. You can use a pseudonym or your real name",
         "label": "Name"
       }
     },
-    "submitButton": "Update the profile"
+    "submitButton": "Update profile"
   },
   "searchInput": {
     "actions": {
-      "clear": "To erase",
-      "search": "To research"
+      "clear": "Clear",
+      "search": "Search"
     },
-    "placeholder": "Research"
+    "placeholder": "Search"
   },
   "settingsAccountPage": {
     "deleteAccountButton": "Delete account",
     "header": {
       "labels": {
         "account": "Update your account settings",
-        "deleteAccount": "Delete your account permanently as well as all your data. This action is irreversible"
+        "deleteAccount": "Permanently delete your account and all your data. This action is irreversible."
       },
       "titles": {
         "account": "Account",
-        "deleteAccount": "Deletion of the account"
+        "deleteAccount": "Delete account"
       }
     }
   },
   "settingsAppearancePage": {
     "header": {
-      "label": "Personalize the appearance of the application",
+      "label": "Customize the appearance of the application",
       "title": "Appearance"
     }
   },
@@ -364,113 +399,105 @@
   },
   "settingsProfilePage": {
     "header": {
-      "label": "This is the way you appear with other users",
+      "label": "This is how you will appear to other users",
       "title": "Profile"
     }
   },
   "settingsSecurityPage": {
     "header": {
-      "label": "Secure your account with a robust password and two -factor authentication settings",
+      "label": "Secure your account with a strong password and two-factor authentication settings",
       "title": "Security"
     }
   },
   "signupForm": {
-    "backButtonLabel": "Already have an account? Log in",
     "fields": {
       "email": {
-        "label": "Email"
-      },
-      "name": {
-        "label": "Name"
+        "label": "Email address"
       },
       "password": {
         "label": "Password"
       },
-      "termsOfUse": {
-        "description": "By sign uping, you accept our conditions of use and our privacy policy"
-      },
+      "termsOfUse": {},
       "username": {
-        "label": "User name"
+        "label": "Username"
+      },
+      "name": {
+        "label": "Name"
       }
     },
     "header": {
-      "title": "Sign up",
-      "label": "Create your account now."
+      "label": "Create your account now",
+      "title": "Sign up"
     },
-    "submitButton": "Sign up"
+    "submitButton": "Sign up",
+    "backButtonLabel": "Already have an account? Log in"
   },
   "themeSwitcher": {
     "options": {
-      "dark": "Dark mode",
-      "light": "Light mode",
-      "system": "System"
+      "lightMode": "Light",
+      "darkMode": "Dark",
+      "systemMode": "System"
     }
   },
   "twoFactorForm": {
     "fields": {
-      "code": {
-        "label": "Verification code"
-      }
-    },
-    "submitButton": "Confirm"
+      "code": {}
+    }
   },
   "zod": {
     "common": {
       "messages": {
-        "accountDeleted": "Deleted account",
-        "accountUpdated": "Updated account",
-        "authenticationUpdated": "Update authentication",
-        "avatarDeleted": "Deleted profile photo",
-        "avatarUpdated": "Updated profile photo",
-        "codeExpired": "The code expired",
+        "accountDeleted": "Account deleted",
+        "accountUpdated": "Account updated",
+        "authenticationUpdated": "Authentication updated",
+        "avatarDeleted": "Profile picture deleted",
+        "avatarUpdated": "Profile picture updated",
+        "codeExpired": "The code has expired",
         "confirmationEmailSent": "Confirmation email sent",
-        "emailFound": "The email address is already used",
-        "emailNotFound": "The email address does not exist",
-        "emailTwoFactorNotEnabled": "Authentication with two factors is not activated",
-        "emailVerified": "E-mail verified",
-        "incorrectEmail": "Incorrect e-mail",
+        "resetEmailSent": "Reset email sent",
+        "emailFound": "The email address is already in use",
+        "emailNotFound": "Email address does not exist",
+        "emailTwoFactorNotEnabled": "Two-factor authentication not enabled",
+        "emailVerified": "Email verified",
+        "incorrectEmail": "Incorrect email",
         "incorrectPassword": "Incorrect password",
         "invalidCode": "Invalid code",
-        "invalidCredentials": "Invalid identifiers",
+        "invalidCredentials": "Invalid credentials",
         "invalidEmail": "Invalid email",
         "invalidFields": "Invalid fields",
         "invalidToken": "Invalid token",
         "missingToken": "Missing token",
-        "passwordUpdated": "Updated password",
-        "profileCompleted": "Completed profile",
-        "profileUpdated": "Updated profile",
-        "resetEmailSent": "Reset e-mail sent",
-        "tokenExpired": "The token expired",
+        "passwordUpdated": "Password updated",
+        "profileCompleted": "Profile completed",
+        "tokenExpired": "The token has expired",
         "twoFactorCodeSent": "Code sent",
-        "usernameFound": "Username already used"
+        "usernameFound": "Username already in use",
+        "profileUpdated": "Profile updated"
       }
     },
     "messages": {
-      "bioMax": "Biography cannot exceed 200 characters",
-      "confirmationRequired": "A confirmation is required",
-      "currentPasswordRequired": "The current password is required",
+      "bioMax": "The bio cannot exceed 200 characters",
+      "confirmationRequired": "Confirmation is required",
+      "currentPasswordRequired": "Current password is required",
       "deleteConfirmation": {
-        "span1": "You have to type",
+        "span1": "You must type",
         "span2": "delete my account",
         "span3": "to confirm"
       },
-      "email": "Please enter a valid e-mail address",
-      "locationMax": "The location cannot exceed 100 characters",
-      "nameMax": "The name must have a maximum of 50 characters",
-      "nameMin": "The name must have at least 2 characters",
-      "nameMin2": "The name must have at least 2 characters",
-      "newPasswordMin": "The new password must have at least 6 characters",
+      "email": "Please enter a valid email address",
+      "locationMax": "Location cannot exceed 100 characters",
+      "nameMax": "The name cannot exceed 50 characters",
+      "nameMin": "The name must be at least 2 characters",
+      "nameMin2": "The name must be at least 2 characters",
+      "newPasswordMin": "The new password must be at least 6 characters",
       "newPasswordRequired": "A new password is required",
       "password": "A password is required",
-      "passwordMin": "The password must have at least 6 characters",
-      "passwordRequired": "The password is required",
-      "usernameMax": "The username must include at most 30 characters",
-      "usernameMin": "The username must have at least 3 characters",
-      "usernameRegex": "The username should only contain letters, numbers, dashes or underlines",
-      "usernameRegexSpecialChars": "The username can only contain letters, numbers, underlines (_) or dashes (-), and cannot start or end with special characters"
+      "passwordMin": "The password must be at least 6 characters",
+      "passwordRequired": "Password is required",
+      "usernameMax": "The username cannot exceed 30 characters",
+      "usernameMin": "The username must be at least 3 characters",
+      "usernameRegex": "Usernames can only contain letters, numbers, hyphens, or underscores",
+      "usernameRegexSpecialChars": "Usernames can only contain letters, numbers, underscores (_), or hyphens (-), and cannot start or end with special characters."
     }
-  },
-  "cardWrapper": {
-    "or": "Or"
   }
 }

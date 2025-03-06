@@ -1,3 +1,4 @@
+import AppFooter from "@/components/app-footer";
 import AppNavbar from "@/components/app-navbar";
 import AppSidebar from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
@@ -16,7 +17,8 @@ export default async function Layout({ children }: LayoutProps) {
       <AppSidebar />
       <SidebarInset>
         <AppNavbar />
-        <div className="flex-1 overflow-auto p-4">{children}</div>
+        <div className="flex-1 overflow-auto px-4 py-6">{children}</div>
+        <AppFooter />
       </SidebarInset>
     </SidebarProvider>
   );

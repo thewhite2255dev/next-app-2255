@@ -28,7 +28,7 @@ export default async function HomePage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       <div className="text-center">
         {user ? (
           <>
@@ -64,40 +64,18 @@ export default async function HomePage() {
                   rel="noopener noreferrer"
                   className="text-info hover:underline hover:underline-offset-2"
                 >
-                  <strong>{t(`card.content.ul.li.${key}.title`)}</strong>
+                  <strong>{t(`card.content.technologies.${key}.title`)}</strong>
                 </Link>
-                {t(`card.content.ul.li.${key}.description`)}
+                <span>
+                  {" "}
+                  {t(`card.content.technologies.${key}.description`)}
+                </span>
               </li>
             ))}
           </ul>
           <p className="mt-4 text-lg">{t("card.content.p2")}</p>
         </CardContent>
       </Card>
-
-      <div className="mt-10 text-center text-sm text-muted-foreground">
-        <p>
-          <span>
-            {t("footer.copyright", {
-              dateYears: new Date().getFullYear(),
-              siteTitle: SiteConfig.title,
-            })}
-          </span>{" "}
-          <span>
-            {t("footer.creator", { creatorName: SiteConfig.author.name })}
-          </span>
-        </p>
-        <p>
-          {t("footer.github")}{" "}
-          <Link
-            href={SiteConfig.author.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-info hover:underline hover:underline-offset-2"
-          >
-            GitHub
-          </Link>
-        </p>
-      </div>
     </div>
   );
 }

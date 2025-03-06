@@ -21,15 +21,12 @@ export default async function AuthLayout({ children }: AuthLayoutProps) {
             {t("footer.copyright", {
               dateYears: new Date().getFullYear(),
               siteTitle: SiteConfig.title,
-            })}
-            .{" "}
-            {t("footer.creator", {
               creatorName: SiteConfig.author.name,
             })}
           </span>
         </div>
         <div className="mt-2 flex items-center space-x-2 sm:mt-0">
-          <LanguageSwitcher size="sm" />
+          <LanguageSwitcher />
           <ThemeSwitcher />
         </div>
       </footer>

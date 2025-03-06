@@ -1,4 +1,214 @@
 {
+  "accountForm": {
+    "fields": {
+      "role": {
+        "enum": {
+          "admin": "Administrateur",
+          "user": "Utilisateur"
+        },
+        "label": "Rôle",
+        "placeholder": "Sélectionner un rôle"
+      },
+      "username": {
+        "description": "Nom affiché sur votre profil et dans les communications par courrier électronique",
+        "label": "Nom d'utilisateur"
+      }
+    },
+    "submitButton": "Mettre à jour le compte"
+  },
+  "appSidebar": {
+    "items": {
+      "accueil": "Accueil"
+    }
+  },
+  "appearanceForm": {
+    "theme": {
+      "label": "Thème",
+      "description": "Personnalisez l'aspect et la convivialité de votre interface comme vous l'entendez",
+      "lightMode": "Clair",
+      "darkMode": "Sombre",
+      "systemMode": "Système"
+    },
+    "language": {
+      "label": "Langue",
+      "description": "Choisissez la langue de votre interface pour une expérience adaptée à vos préférences.",
+      "en": {
+        "label": "Anglais"
+      },
+      "fr": {
+        "label": "Français"
+      }
+    },
+    "options": {
+      "lightMode": "Clair",
+      "darkMode": "Sombre",
+      "systemMode": "Système"
+    }
+  },
+  "authLayout": {
+    "footer": {
+      "copyright": "© {dateYears} {siteTitle} créé par {creatorName}. Tous droits réservés"
+    }
+  },
+  "authenticationForm": {
+    "fields": {
+      "isTwoFactorEnabled": {
+        "description": "Activez l'authentification à deux facteurs pour sécuriser votre compte",
+        "label": "Authentification à deux facteurs"
+      }
+    },
+    "submitButton": "Mettre à jour l'authentification"
+  },
+  "cardWrapper": {
+    "or": "Ou"
+  },
+  "common": {
+    "messages": {
+      "generic": "Quelque chose s'est mal passé",
+      "notAuthorized": "Non autorisé"
+    }
+  },
+  "deleteAccountForm": {
+    "buttons": {
+      "cancel": "Annuler",
+      "submit": "Supprimer"
+    },
+    "fields": {
+      "confirmation": {
+        "label": {
+          "span1": "Pour confirmer, tapez",
+          "span2": "supprimer mon compte",
+          "span3": "ci-dessous"
+        }
+      },
+      "email": {
+        "label": {
+          "span1": "Entrez votre e-mail",
+          "span2": "pour continuer"
+        }
+      },
+      "password": {
+        "label": "Confirmez le mot de passe"
+      }
+    },
+    "header": {
+      "description": "Nous supprimerons votre compte immédiatement",
+      "title": "Voulez-vous vraiment supprimer votre compte ?"
+    },
+    "warning": "Cette action n'est pas réversible. Veuillez vous en assurer"
+  },
+  "errorCard": {
+    "header": {
+      "title": "Oups"
+    },
+    "backButtonLabel": "Retour à la connexion",
+    "genericError": "Quelque chose s'est mal passé. Veuillez réessayer plus tard"
+  },
+  "forgotPasswordForm": {
+    "backButtonLabel": "Retour à la connexion",
+    "fields": {
+      "email": {
+        "label": "E-mail"
+      }
+    },
+    "header": {
+      "label": "Entrez votre adresse e-mail. Un lien pour réinitialiser votre mot de passe vous sera envoyé",
+      "title": "Mot de passe oublié"
+    },
+    "submitButton": "Envoyer un e-mail de réinitialisation"
+  },
+  "homePage": {
+    "header": {
+      "titles": {
+        "welcomeBack": "Bienvenue à nouveau {name} !",
+        "welcome": "Bienvenue sur {siteTitle} !"
+      },
+      "subTitle": {
+        "welcome": "Explorez nos fonctionnalités, rejoignez la communauté et commencez votre parcours",
+        "welcomeBack": "Nous sommes heureux de vous revoir"
+      }
+    },
+    "card": {
+      "header": {
+        "title": "À propos de {siteTitle}"
+      },
+      "content": {
+        "p1": "Il s'agit d'une plateforme pour les projets full stack utilisant Next.js. Elle fournit une structure efficace pour le développement d'applications web avec des technologies modernes. Les technologies clés sont :",
+        "p2": "Que vous créiez votre première application ou que vous gériez des projets complexes, cette plateforme offre les outils nécessaires pour démarrer rapidement avec une configuration minimale",
+        "technologies": {
+          "nextjs": {
+            "title": "Next.js",
+            "description": ": pour le rendu côté serveur et un développement complet et transparent"
+          },
+          "tailwindCSS": {
+            "title": "Tailwind CSS",
+            "description": ": pour un style personnalisé, réactif et efficace"
+          },
+          "prisma": {
+            "title": "Prisma",
+            "description": ": pour la gestion de base de données et le support ORM, garantissant une interaction fluide avec les données"
+          },
+          "postgresql": {
+            "title": "PostgreSQL",
+            "description": ": une base de données relationnelle puissante pour un stockage sécurisé et évolutif"
+          },
+          "shadcn": {
+            "title": "ShadCN",
+            "description": ": une bibliothèque de composants qui simplifie la création d'interfaces utilisateurs cohérentes et esthétiques"
+          },
+          "lucideReact": {
+            "title": "Lucide React",
+            "description": ": une collection d'icônes open source et personnalisables pour les applications React"
+          }
+        }
+      }
+    },
+    "footer": {
+      "copyright": "© {dateYears} {siteTitle} créé par {creatorName}. Tous droits réservés",
+      "creator": "Créé par {creatorName}",
+      "github": "Découvrez mon travail sur GitHub"
+    }
+  },
+  "languageSwitcher": {
+    "options": {
+      "en": {
+        "label": "Anglais"
+      },
+      "fr": {
+        "label": "Français"
+      }
+    }
+  },
+  "loginForm": {
+    "backButtonLabel": "Vous n'avez pas de compte ? Inscription",
+    "buttons": {
+      "confirmTwoFactorCode": "Confirmer",
+      "forgotPassword": "Mot de passe oublié",
+      "submit": "Se connecter"
+    },
+    "errors": {
+      "OAuthAccountNotLinked": "E-mail déjà utilisé avec différents fournisseurs"
+    },
+    "fields": {
+      "email": {
+        "label": "E-mail"
+      },
+      "password": {
+        "label": "Mot de passe"
+      }
+    },
+    "header": {
+      "label": {
+        "logIn": "Bienvenue à nouveau ! Connectez-vous à votre compte",
+        "twoFactor": "Si vous avez un compte, nous avons envoyé un code à {email}. Entrez-le ci-dessous"
+      },
+      "titles": {
+        "logIn": "Connexion",
+        "twoFactor": "Vérifiez qu'il s'agit bien de vous"
+      }
+    },
+    "resendTwoFactorCode": "Vous n'avez pas reçu le code ? Renvoyer"
+  },
   "metadata": {
     "settingsAccountPage": {
       "title": "Paramètres du compte | {siteTitle}",
@@ -49,156 +259,29 @@
       "description": "Complétez votre profil pour commencer à utiliser la plateforme"
     }
   },
-  "accountForm": {
-    "fields": {
-      "role": {
-        "enum": {
-          "admin": "Administrateur",
-          "user": "Utilisateur"
-        },
-        "label": "Rôle",
-        "placeholder": "Sélectionner un rôle"
-      },
-      "username": {
-        "description": "Nom affiché sur votre profil et dans les communications par courrier électronique",
-        "label": "Nom d'utilisateur"
-      }
-    },
-    "submitButton": "Mettre à jour le compte"
-  },
-  "appSidebar": {
-    "items": {
-      "accueil": "Accueil"
-    }
-  },
-  "appearanceForm": {
-    "header": {
-      "description": "Personnalisez l'aspect et la convivialité de votre interface comme vous l'entendez",
-      "title": "Thème"
-    },
-    "options": {
-      "dark": "Sombre",
-      "light": "Lumière",
-      "system": "Système"
-    }
-  },
-  "authenticationForm": {
-    "fields": {
-      "isTwoFactorEnabled": {
-        "description": "Activez l'authentification à deux facteurs pour sécuriser votre compte",
-        "label": "Authentification à deux facteurs"
-      }
-    },
-    "submitButton": "Mettre à jour l'authentification"
-  },
-  "common": {
-    "messages": {
-      "generic": "Quelque chose s'est mal passé",
-      "notAuthorized": "Non autorisé"
-    }
-  },
-  "deleteAccountForm": {
-    "buttons": {
-      "cancel": "Annuler",
-      "submit": "Supprimer"
-    },
-    "fields": {
-      "confirmation": {
-        "label": {
-          "span1": "Pour confirmer, tapez",
-          "span2": "supprimer mon compte",
-          "span3": "ci-dessous"
-        }
-      },
-      "email": {
-        "label": {
-          "span1": "Entrez votre e-mail",
-          "span2": "pour continuer"
-        }
-      },
-      "password": {
-        "label": "Confirmez le mot de passe"
-      }
-    },
-    "header": {
-      "description": "Nous supprimerons votre compte immédiatement",
-      "title": "Voulez-vous vraiment supprimer votre compte ?"
-    },
-    "warning": "Cette action n'est pas réversible. Veuillez vous en assurer"
-  },
-  "forgotPasswordForm": {
-    "backButtonLabel": "Retour à la connexion",
-    "fields": {
-      "email": {
-        "label": "E-mail"
-      }
-    },
-    "header": {
-      "label": "Entrez votre adresse e-mail. Un lien pour réinitialiser votre mot de passe vous sera envoyé",
-      "title": "Mot de passe oublié"
-    },
-    "submitButton": "Envoyer un e-mail de réinitialisation"
-  },
-  "onboardingForm": {
-    "backButtonLabel": "Retour à la connexion",
-    "fields": {
-      "name": {
-        "label": "Nom"
-      },
-      "password": {
-        "label": "Mot de passe"
-      },
-      "username": {
-        "label": "Nom d'utilisateur"
-      }
-    },
-    "header": {
-      "label": "Complétez votre profil pour continuer",
-      "title": "Bienvenue sur la plateforme"
-    },
-    "submitButton": "Continuer"
-  },
-  "languageSwitcher": {
-    "languages": {
-      "en": "Anglais",
-      "fr": "Français"
-    }
-  },
-  "loginForm": {
-    "backButtonLabel": "Vous n'avez pas de compte ? Inscription",
-    "buttons": {
-      "confirmTwoFactorCode": "Confirmer",
-      "forgotPassword": "Mot de passe oublié",
-      "submit": "Se connecter"
-    },
-    "errors": {
-      "OAuthAccountNotLinked": "E-mail déjà utilisé avec différents fournisseurs"
-    },
-    "fields": {
-      "email": {
-        "label": "E-mail"
-      },
-      "password": {
-        "label": "Mot de passe"
-      }
-    },
-    "header": {
-      "label": {
-        "logIn": "Bienvenue à nouveau ! Connectez-vous à votre compte",
-        "twoFactor": "Si vous avez un compte, nous avons envoyé un code à {email}. Entrez-le ci-dessous"
-      },
-      "titles": {
-        "logIn": "Connexion",
-        "twoFactor": "Vérifiez qu'il s'agit bien de vous"
-      }
-    },
-    "resendTwoFactorCode": "Vous n'avez pas reçu le code ? Renvoyer"
-  },
   "navUser": {
     "items": {
       "logIn": "Se connecter",
       "logOut": "Se déconnecter",
-      "settings": "Paramètres"
+      "settings": "Paramètres",
+      "preferences": {
+        "title": "Préférence",
+        "theme": {
+          "label": "Thème",
+          "lightMode": "Clair",
+          "darkMode": "Sombre",
+          "systemMode": "Système"
+        },
+        "language": {
+          "label": "Langue",
+          "en": {
+            "label": "Anglais"
+          },
+          "fr": {
+            "label": "Français"
+          }
+        }
+      }
     }
   },
   "newPasswordForm": {
@@ -219,6 +302,25 @@
     "header": {
       "title": "Vérification de l'adresse e-mail"
     }
+  },
+  "onboardingForm": {
+    "backButtonLabel": "Retour à la connexion",
+    "fields": {
+      "name": {
+        "label": "Nom"
+      },
+      "password": {
+        "label": "Mot de passe"
+      },
+      "username": {
+        "label": "Nom d'utilisateur"
+      }
+    },
+    "header": {
+      "label": "Complétez votre profil pour continuer",
+      "title": "Bienvenue sur la plateforme"
+    },
+    "submitButton": "Continuer"
   },
   "passwordForm": {
     "fields": {
@@ -314,9 +416,7 @@
       "password": {
         "label": "Mot de passe"
       },
-      "termsOfUse": {
-        "description": "En vous inscrivant, vous acceptez nos conditions d'utilisation et notre politique de confidentialité"
-      },
+      "termsOfUse": {},
       "username": {
         "label": "Nom d'utilisateur"
       },
@@ -331,19 +431,16 @@
     "submitButton": "S'inscrire",
     "backButtonLabel": "Vous avez déjà un compte ? Connexion"
   },
-  "twoFactorForm": {
-    "fields": {
-      "code": {
-        "label": "Code de vérification"
-      }
-    },
-    "submitButton": "Confirmer"
-  },
   "themeSwitcher": {
     "options": {
-      "dark": "Mode sombre",
-      "light": "Mode clair",
-      "system": "Système"
+      "lightMode": "Clair",
+      "darkMode": "Sombre",
+      "systemMode": "Système"
+    }
+  },
+  "twoFactorForm": {
+    "fields": {
+      "code": {}
     }
   },
   "zod": {
@@ -401,76 +498,5 @@
       "usernameRegex": "Le nom d'utilisateur ne doit contenir que des lettres, des chiffres, des tirets ou des soulignements",
       "usernameRegexSpecialChars": "Le nom d'utilisateur ne peut contenir que des lettres, des chiffres, des soulignements (_) ou des tirets (-), et ne peut pas commencer ni se terminer par des caractères spéciaux"
     }
-  },
-  "homePage": {
-    "header": {
-      "titles": {
-        "welcomeBack": "Bienvenue à nouveau {name} !",
-        "welcome": "Bienvenue sur {siteTitle} !"
-      },
-      "subTitle": {
-        "welcome": "Explorez nos fonctionnalités, rejoignez la communauté et commencez votre parcours",
-        "welcomeBack": "Nous sommes heureux de vous revoir"
-      }
-    },
-    "card": {
-      "header": {
-        "title": "À propos de {siteTitle}"
-      },
-      "content": {
-        "p1": "Il s'agit d'une plateforme pour les projets full stack utilisant Next.js. Elle fournit une structure efficace pour le développement d'applications web avec des technologies modernes. Les technologies clés sont :",
-        "p2": "Que vous créiez votre première application ou que vous gériez des projets complexes, cette plateforme offre les outils nécessaires pour démarrer rapidement avec une configuration minimale",
-        "ul": {
-          "li": {
-            "nextjs": {
-              "title": "Next.js",
-              "description": ": pour le rendu côté serveur et un développement complet et transparent"
-            },
-            "tailwindCSS": {
-              "title": "Tailwind CSS",
-              "description": ": pour un style personnalisé, réactif et efficace"
-            },
-            "prisma": {
-              "title": "Prisma",
-              "description": ": pour la gestion de base de données et le support ORM, garantissant une interaction fluide avec les données"
-            },
-            "postgresql": {
-              "title": "PostgreSQL",
-              "description": ": une base de données relationnelle puissante pour un stockage sécurisé et évolutif"
-            },
-            "shadcn": {
-              "title": "ShadCN",
-              "description": ": une bibliothèque de composants qui simplifie la création d'interfaces utilisateurs cohérentes et esthétiques"
-            },
-            "lucideReact": {
-              "title": "Lucide React",
-              "description": ": une collection d'icônes open source et personnalisables pour les applications React"
-            }
-          }
-        }
-      }
-    },
-    "footer": {
-      "copyright": "© {dateYears} {siteTitle}. Tous droits réservés",
-      "creator": "Créé par {creatorName}",
-      "github": "Découvrez mon travail sur GitHub"
-    }
-  },
-  "authLayout": {
-    "footer": {
-      "copyright": "© {dateYears} {siteTitle}. Tous droits réservés",
-      "creator": "Créé par {creatorName}",
-      "github": "Découvrez mon travail sur GitHub"
-    }
-  },
-  "errorCard": {
-    "header": {
-      "title": "Oups"
-    },
-    "backButtonLabel": "Retour à la connexion",
-    "genericError": "Quelque chose s'est mal passé. Veuillez réessayer plus tard"
-  },
-  "cardWrapper": {
-    "or": "Ou"
   }
 }

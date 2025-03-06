@@ -164,7 +164,7 @@ export default function DeleteAccountButton({
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
-                          {t("passwordForm.fields.password.label")}
+                          {t("deleteAccountForm.fields.password.label")}
                         </FormLabel>
                         <FormControl>
                           <div className="relative">

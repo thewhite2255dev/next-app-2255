@@ -25,27 +25,27 @@ export default function ThemeSwitcher() {
           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          <div className="flex flex-1 items-center space-x-2">
-            <Monitor className="h-4 w-4" />
-            <span>{t("options.system")}</span>
+      <DropdownMenuContent align="end" className="w-40">
+        <DropdownMenuItem onClick={() => setTheme("light")}>
+          <div className="mr-auto flex items-center space-x-2">
+            <Sun className="h-4 w-4" />
+            <span>{t("options.lightMode")}</span>
           </div>
-          {theme === "system" && <Check />}
+          {theme === "light" && <Check />}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <div className="flex flex-1 items-center space-x-2">
+          <div className="mr-auto flex items-center space-x-2">
             <Moon className="h-4 w-4" />
-            <span>{t("options.dark")}</span>
+            <span>{t("options.darkMode")}</span>
           </div>
           {theme === "dark" && <Check />}
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          <div className="flex flex-1 items-center space-x-2">
-            <Sun className="h-4 w-4" />
-            <span>{t("options.light")}</span>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          <div className="mr-auto flex items-center space-x-2">
+            <Monitor className="h-4 w-4" />
+            <span>{t("options.systemMode")}</span>
           </div>
-          {theme === "light" && <Check />}
+          {theme === "system" && <Check />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
